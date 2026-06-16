@@ -71,7 +71,7 @@ export default function RootLayout({
       lang="en"
       className={`${geistSans.variable} ${playfair.variable} antialiased`}
     >
-      <body className="min-h-screen flex flex-col">
+      <body className="min-h-[100dvh] flex flex-col">
         <SmoothScroll>
           {children}
         </SmoothScroll>

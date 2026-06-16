@@ -2,6 +2,7 @@
 
 import React, { useEffect, useRef, useState } from 'react'
 import CustomCursor from './CustomCursor'
+import { useReducedMotion } from 'framer-motion'
 
 const projects = [
   { id: 1, name: 'Omaha Performing Arts', tag: 'Web', bg: '#f8fafc', textColor: 'text-slate-800' },
@@ -29,55 +30,51 @@ export default function ProjectsSection({ disableThemeToggle = false }: Projects
 
   const headingRef = useRef<HTMLHeadingElement>(null)
 
+  // Replace scroll listener with IntersectionObserver (no jank, passive by default)
   useEffect(() => {
     if (disableThemeToggle) {
       document.documentElement.classList.remove('dark')
       return
     }
+    if (!headingRef.current) return
 
-    const handleScroll = () => {
-      if (!headingRef.current) return
-      
-      // Get the bounding rect of the heading
-      const rect = headingRef.current.getBoundingClientRect()
-      
-      // The sticky header (Ticker + Navbar) is roughly 140px tall.
-      // We trigger the dark theme when the top of the heading hits or goes above that line.
-      if (rect.top <= 140) {
-        document.documentElement.classList.add('dark')
-      } else {
-        document.documentElement.classList.remove('dark')
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (!entry.isIntersecting) {
+          document.documentElement.classList.add('dark')
+        } else {
+          document.documentElement.classList.remove('dark')
+        }
+      },
+      {
+        // Fire when the heading scrolls 140px above the viewport top
+        rootMargin: '-140px 0px 0px 0px',
+        threshold: 0,
       }
-    }
+    )
 
-    window.addEventListener('scroll', handleScroll, { passive: true })
-    handleScroll() // Check initial state
-    
-    return () => window.removeEventListener('scroll', handleScroll)
+    observer.observe(headingRef.current)
+    return () => observer.disconnect()
   }, [disableThemeToggle])
 
+  const prefersReducedMotion = useReducedMotion()
+
   useEffect(() => {
-    // Animation loop for infinite carousel
+    // Respect prefers-reduced-motion — pause carousel if user opted out
+    if (prefersReducedMotion) return
+
     const animate = () => {
-      // Smoothly interpolate speed towards target speed (slow down on hover)
       speed.current += (targetSpeed.current - speed.current) * 0.1
-      
       xPos.current -= speed.current
       
       if (trackRef.current) {
-        // Calculate width dynamically
         const firstChild = trackRef.current.children[0] as HTMLElement
         if (firstChild) {
-          // Parent uses gap-8 which is 32px
-          const gap = 32 
+          const gap = 32
           const cardWidth = firstChild.offsetWidth + gap
           const totalWidth = cardWidth * projects.length
-          
-          if (xPos.current <= -totalWidth) {
-            xPos.current += totalWidth
-          }
+          if (xPos.current <= -totalWidth) xPos.current += totalWidth
         }
-        
         trackRef.current.style.transform = `translateX(${xPos.current}px)`
       }
       
@@ -86,7 +83,7 @@ export default function ProjectsSection({ disableThemeToggle = false }: Projects
     
     requestRef.current = requestAnimationFrame(animate)
     return () => cancelAnimationFrame(requestRef.current!)
-  }, [])
+  }, [prefersReducedMotion])
 
   const handleMouseEnter = () => {
     targetSpeed.current = 0.15 // Slow down immensely

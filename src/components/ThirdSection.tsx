@@ -58,30 +58,30 @@ const LogoMarquee = () => {
 
 export default function ThirdSection() {
   return (
-    <section className="bg-background text-foreground transition-colors duration-700 ease-out pt-32 pb-16 overflow-hidden">
-      <div className="px-8 lg:px-20 mx-auto w-full">
+    <section className="bg-background text-foreground transition-colors duration-700 ease-out pt-16 sm:pt-32 pb-16 overflow-hidden w-full">
+      <div className="px-5 sm:px-8 lg:px-20 mx-auto w-full">
         
         {/* Top Text and Button */}
-        <div className="max-w-4xl mb-16">
-          <h2 className="font-serif text-[clamp(36px,4vw,56px)] leading-[1.1] text-foreground mb-12">
+        <div className="max-w-4xl mb-12 sm:mb-16">
+          <h2 className="font-serif text-[clamp(28px,4vw,56px)] leading-[1.1] text-foreground mb-8 sm:mb-12">
             Great work gets us hired, but<br />
             our process, character, and<br />
             relationships keep us in business.
           </h2>
           
-          <button className="bg-[#c4e5e3] hover:bg-[#a9d8d5] text-black font-medium text-sm px-8 py-4 rounded-full transition-colors duration-300">
+          <a href="/about" className="inline-block bg-foreground text-background hover:opacity-80 text-black font-medium text-sm px-8 py-4 rounded-full transition-colors duration-300">
             About Us
-          </button>
+          </a>
         </div>
 
         {/* Middle Area: "We've helped folks" and Badge */}
-        <div className="flex flex-col md:flex-row items-center justify-between mt-32 relative">
-          <div className="flex items-baseline gap-4 mb-12 md:mb-0">
-            <span className="font-serif text-4xl text-foreground">We've helped folks</span>
-            <span className="font-sans text-sm font-medium opacity-60">big & small</span>
+        <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between mt-16 sm:mt-32 relative gap-8">
+          <div className="flex items-baseline gap-4">
+            <span className="font-serif text-2xl sm:text-4xl text-foreground">We've helped folks</span>
+            <span className="font-sans text-sm font-medium opacity-60">big &amp; small</span>
           </div>
           
-          <div className="md:absolute md:right-0 md:top-1/2 md:-translate-y-1/2 md:-mr-10">
+          <div className="shrink-0">
             <Badge />
           </div>
         </div>

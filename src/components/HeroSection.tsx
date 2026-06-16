@@ -1,7 +1,7 @@
 'use client'
 
 import React from 'react'
-import { motion } from 'framer-motion'
+import { motion, useReducedMotion } from 'framer-motion'
 import { Globe } from '@/components/ui/globe'
 import { OrbitingCircles } from '@/components/ui/orbiting-circles'
 import { 
@@ -14,26 +14,34 @@ import {
 } from 'react-icons/si'
 
 export default function HeroSection() {
+  // Respect prefers-reduced-motion — if true, skip entry animations
+  const reduce = useReducedMotion()
+
+  const motionProps = (delay = 0) =>
+    reduce
+      ? {}
+      : {
+          initial: { opacity: 0, y: 20 },
+          animate: { opacity: 1, y: 0 },
+          transition: { duration: 0.8, delay },
+        }
+
   return (
     <section 
       className="relative flex w-full flex-col items-center justify-start overflow-hidden bg-background"
-      style={{ minHeight: 'calc(100vh - 88px)' }}
+      style={{ minHeight: '100dvh' }}
     >
       {/* Title */}
-      <div className="z-10 flex flex-col items-center text-center pt-[8vh] px-8">
+      <div className="z-10 flex flex-col items-center text-center pt-[6vh] px-4 sm:px-8 w-full">
         <motion.h1 
-          className="font-serif text-5xl md:text-7xl lg:text-[100px] leading-[1.05] tracking-tight text-foreground"
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
+          className="font-serif text-4xl sm:text-5xl md:text-7xl lg:text-[100px] leading-[1.05] tracking-tight text-foreground"
+          {...motionProps(0)}
         >
           We build for the web.
         </motion.h1>
         <motion.p 
-          className="mt-6 text-lg lg:text-xl text-foreground/70 max-w-2xl"
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.2 }}
+          className="mt-4 sm:mt-6 text-base sm:text-lg lg:text-xl text-foreground/70 max-w-xl sm:max-w-2xl"
+          {...motionProps(0.2)}
         >
           Order out of chaos. We design and engineer premium web experiences and custom software for businesses that want to scale globally.
         </motion.p>
@@ -48,7 +56,7 @@ export default function HeroSection() {
           <Globe />
         </div>
         
-        {/* Inner Circle (Fast) */}
+        {/* Inner Circle (Fast) — hidden on smallest screens to reduce clutter */}
         <OrbitingCircles className="size-[50px] border-none bg-transparent" duration={25} delay={0} radius={470}>
           <div className="bg-background border border-border p-3 rounded-full text-foreground/80 shadow-md flex items-center justify-center"><SiHtml5 size={24} className="text-[#E34F26]" /></div>
           <div className="bg-background border border-border p-3 rounded-full text-foreground/80 shadow-md flex items-center justify-center"><SiCss size={24} className="text-[#1572B6]" /></div>

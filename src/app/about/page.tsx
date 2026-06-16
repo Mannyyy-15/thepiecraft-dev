@@ -53,28 +53,29 @@ export default function AboutPage() {
   const teamSectionRef = useRef<HTMLElement>(null);
 
   useEffect(() => {
-    // Scroll listener for dynamic dark mode toggle
-    const handleScroll = () => {
-      if (!teamSectionRef.current) return;
-      const rect = teamSectionRef.current.getBoundingClientRect();
-      
-      // Trigger when the team section is near the navbar
-      if (rect.top <= 140) {
-        document.documentElement.classList.add('dark');
-      } else {
-        document.documentElement.classList.remove('dark');
-      }
-    };
+    if (!teamSectionRef.current) return
 
-    window.addEventListener('scroll', handleScroll, { passive: true });
-    handleScroll(); // Initial check
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (!entry.isIntersecting) {
+          document.documentElement.classList.add('dark')
+        } else {
+          document.documentElement.classList.remove('dark')
+        }
+      },
+      {
+        rootMargin: '-140px 0px 0px 0px',
+        threshold: 0,
+      }
+    )
+
+    observer.observe(teamSectionRef.current)
 
     return () => {
-      window.removeEventListener('scroll', handleScroll);
-      // Clean up dark mode if navigating away
-      document.documentElement.classList.remove('dark');
-    };
-  }, []);
+      observer.disconnect()
+      document.documentElement.classList.remove('dark')
+    }
+  }, [])
 
   return (
     <div className="min-h-screen bg-background text-foreground transition-colors duration-700 ease-out flex flex-col">
