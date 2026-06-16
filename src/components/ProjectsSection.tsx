@@ -41,13 +41,19 @@ export default function ProjectsSection({ disableThemeToggle = false }: Projects
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (!entry.isIntersecting) {
-          document.documentElement.classList.add('dark')
+          // Only go dark if element exited from the TOP (user scrolled past it)
+          // If top > 0 it's still below the viewport on initial load — stay light
+          if (entry.boundingClientRect.top < 0) {
+            document.documentElement.classList.add('dark')
+          } else {
+            document.documentElement.classList.remove('dark')
+          }
         } else {
+          // Heading is visible — light mode
           document.documentElement.classList.remove('dark')
         }
       },
       {
-        // Fire when the heading scrolls 140px above the viewport top
         rootMargin: '-140px 0px 0px 0px',
         threshold: 0,
       }

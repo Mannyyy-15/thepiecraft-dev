@@ -58,7 +58,12 @@ export default function AboutPage() {
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (!entry.isIntersecting) {
-          document.documentElement.classList.add('dark')
+          // Only go dark if element exited from the TOP (scrolled past it)
+          if (entry.boundingClientRect.top < 0) {
+            document.documentElement.classList.add('dark')
+          } else {
+            document.documentElement.classList.remove('dark')
+          }
         } else {
           document.documentElement.classList.remove('dark')
         }
