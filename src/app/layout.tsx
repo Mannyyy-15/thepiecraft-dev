@@ -60,6 +60,8 @@ export const metadata: Metadata = {
 };
 
 import SmoothScroll from "@/components/SmoothScroll";
+import Ticker from "@/components/Ticker";
+import Navbar from "@/components/Navbar";
 
 export default function RootLayout({
   children,
@@ -73,6 +75,10 @@ export default function RootLayout({
     >
       <body className="min-h-[100dvh] flex flex-col">
         <SmoothScroll>
+          <header className="sticky top-0 z-50 w-full flex flex-col">
+            <Ticker />
+            <Navbar />
+          </header>
           {children}
         </SmoothScroll>
       </body>
