@@ -26,7 +26,7 @@ export default function ProjectsSection({ disableThemeToggle = false }: Projects
   const xPos = useRef(0)
   const speed = useRef(1) // Base speed
   const targetSpeed = useRef(1)
-  const requestRef = useRef<number>()
+  const requestRef = useRef<number>(0)
 
   const headingRef = useRef<HTMLHeadingElement>(null)
 
