@@ -87,7 +87,7 @@ export default function Navbar() {
       >
         <Link href="/" className="flex items-center">
           <Image
-            src="/logo.png"
+            src="/brand-logo.png"
             alt="ThePieCraft"
             width={40}
             height={40}
