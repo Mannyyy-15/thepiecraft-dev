@@ -19,6 +19,35 @@ body {
 .hide-scrollbar::-webkit-scrollbar { display: none; }
 .hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
 
+/* ─── Global Premium Scrollbar ───────────────────────── */
+html {
+  /* Removed scrollbar-color as it forces native Chrome scrollbars (with arrows) */
+  scrollbar-width: thin;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--background);
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: var(--foreground);
+  border: 3px solid var(--background);
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-corner {
+  background: var(--background);
+}
+
+::-webkit-scrollbar-button {
+  display: none;
+}
+
 @keyframes marquee {
   from { transform: translateX(0); }
   to { transform: translateX(-50%); }
@@ -169,6 +198,10 @@ body {
   }
   body {
     @apply bg-background text-foreground transition-colors duration-700 ease-out;
+    cursor: none;
+  }
+  a, button {
+    cursor: none;
   }
   html {
     @apply font-sans scroll-smooth;

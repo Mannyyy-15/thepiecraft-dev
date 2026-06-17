@@ -2,6 +2,7 @@
 
 import { motion } from 'framer-motion'
 import Footer from '@/components/Footer'
+import MagneticButton from '@/components/MagneticButton'
 // Navbar + Ticker rendered globally by layout.tsx
 
 export default function ContactPage() {
@@ -94,12 +95,14 @@ export default function ContactPage() {
               </motion.div>
 
               <motion.div variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0 } }} className="pt-8">
-                <button 
-                  type="submit" 
-                  className="group relative inline-flex items-center justify-center overflow-hidden rounded-full bg-foreground text-background px-12 py-5 font-medium transition-all duration-300 hover:scale-105"
-                >
-                  <span className="relative z-10 text-lg">Send Message</span>
-                </button>
+                <MagneticButton>
+                  <button 
+                    type="submit" 
+                    className="group relative inline-flex items-center justify-center overflow-hidden rounded-full bg-foreground text-background px-12 py-5 font-medium transition-all duration-300 hover:scale-105"
+                  >
+                    <span className="relative z-10 text-lg">Send Message</span>
+                  </button>
+                </MagneticButton>
               </motion.div>
 
             </motion.form>

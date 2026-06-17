@@ -13,6 +13,7 @@ import {
 import Footer from '@/components/Footer'
 import ProjectsSection from '@/components/ProjectsSection'
 import FallingPills from '@/components/FallingPills'
+import MagneticButton from '@/components/MagneticButton'
 // Navbar + Ticker rendered globally by layout.tsx
 
 const WHY_ITEMS = [
@@ -369,16 +370,18 @@ export default function SoftwarePage() {
           >
             Ready to build your custom software?
           </motion.h2>
-          <motion.a
-            href="/contact"
-            className="inline-flex items-center gap-3 bg-white text-black px-10 py-5 rounded-full font-sans font-medium text-lg hover:bg-brand-blue transition-colors duration-300"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-          >
-            Start a project <ArrowUpRight className="w-5 h-5" />
-          </motion.a>
+          <MagneticButton>
+            <motion.a
+              href="/contact"
+              className="inline-flex items-center gap-3 bg-white text-black px-10 py-5 rounded-full font-sans font-medium text-lg hover:bg-brand-blue transition-colors duration-300"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+            >
+              Start a project <ArrowUpRight className="w-5 h-5" />
+            </motion.a>
+          </MagneticButton>
         </section>
 
         <Footer />

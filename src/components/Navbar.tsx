@@ -91,7 +91,7 @@ export default function Navbar() {
             alt="ThePieCraft"
             width={160}
             height={50}
-            className="h-10 w-auto object-contain brightness-0"
+            className="h-10 w-auto object-contain brightness-0 dark:invert transition-all duration-700"
             priority
           />
         </Link>
@@ -102,15 +102,15 @@ export default function Navbar() {
           onMouseLeave={() => setHoveredLink(null)}
         >
           {links.map(({ label, href }) => {
-            const isActive = pathname === href
+            const isActive = pathname === href || pathname.startsWith(`${href}/`)
             const isHighlighted = hoveredLink === href || (hoveredLink === null && isActive)
             return (
-              <li key={label} className="relative flex items-center justify-center">
+              <li key={href} className="relative flex items-center justify-center">
                 <Link
                   href={href}
                   onMouseEnter={() => setHoveredLink(href)}
                   className={cn(
-                    'relative z-10 text-[17px] font-medium transition-colors duration-300 ease-out px-5 py-2 rounded-full',
+                    'relative z-10 text-[17px] font-medium transition-colors duration-300 ease-out px-5 py-2 rounded-full inline-block',
                     isHighlighted ? 'text-background' : 'text-foreground hover:opacity-70'
                   )}
                 >

@@ -76,6 +76,9 @@ export const metadata: Metadata = {
 import SmoothScroll from "@/components/SmoothScroll";
 import Ticker from "@/components/Ticker";
 import Navbar from "@/components/Navbar";
+import CustomCursor from "@/components/CustomCursor";
+import PageTransition from "@/components/PageTransition";
+import Preloader from "@/components/Preloader";
 
 export default function RootLayout({
   children,
@@ -87,7 +90,8 @@ export default function RootLayout({
       lang="en"
       className={`${geistSans.variable} ${playfair.variable} antialiased`}
     >
-      <body className="min-h-[100dvh] flex flex-col">
+      <body className="min-h-[100dvh] flex flex-col antialiased font-sans font-normal overflow-x-hidden selection:bg-foreground selection:text-background">
+        <Preloader />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
@@ -117,11 +121,14 @@ export default function RootLayout({
           }}
         />
         <SmoothScroll>
+          <CustomCursor />
           <header className="sticky top-0 z-50 w-full flex flex-col">
             <Ticker />
             <Navbar />
           </header>
-          {children}
+          <PageTransition>
+            {children}
+          </PageTransition>
         </SmoothScroll>
       </body>
     </html>

@@ -1,63 +1,13 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import Footer from '@/components/Footer'
-import CustomCursor from '@/components/CustomCursor'
+import Link from 'next/link'
+import { PROJECTS } from '@/lib/projects'
 // Navbar + Ticker are rendered globally in layout.tsx — do NOT add them here
 
-const portfolioProjects = [
-  {
-    id: 1,
-    name: 'Omaha Performing Arts',
-    tag: 'Web',
-    desc: 'Website for an arts and entertainment nonprofit.',
-    bg: '#f0f0ee',
-    accent: '#1a1a1a',
-  },
-  {
-    id: 2,
-    name: 'My Cyber Path',
-    tag: 'Web',
-    desc: 'Website for an online cyber security career platform.',
-    bg: '#1e1535',
-    accent: '#a78bfa',
-  },
-  {
-    id: 3,
-    name: 'Walthill Public Schools',
-    tag: 'Brand',
-    desc: 'Brand and collateral for an indigenous preK-12 school.',
-    bg: '#1a6eb5',
-    accent: '#ffffff',
-  },
-  {
-    id: 4,
-    name: 'Foster CRM',
-    tag: 'Software',
-    desc: 'Custom CRM platform for an experiential marketing firm.',
-    bg: '#0f172a',
-    accent: '#7dd3fc',
-  },
-  {
-    id: 5,
-    name: 'HudlTV',
-    tag: 'Software',
-    desc: 'SaaS platform for a live streaming service.',
-    bg: '#000000',
-    accent: '#f97316',
-  },
-  {
-    id: 6,
-    name: 'Building Brand',
-    tag: 'Brand',
-    desc: 'Identity system for a commercial construction firm.',
-    bg: '#e8dcc8',
-    accent: '#2d1f0f',
-  },
-]
-
 // Minimal card thumbnail — placeholder art per project
-function CardArt({ project }: { project: typeof portfolioProjects[0] }) {
+function CardArt({ project }: { project: typeof PROJECTS[0] }) {
   return (
     <div className="w-full h-full flex items-center justify-center relative overflow-hidden">
       {/* Subtle background pattern */}
@@ -78,16 +28,22 @@ function CardArt({ project }: { project: typeof portfolioProjects[0] }) {
 
 export default function WorkPage() {
   const [filter, setFilter] = useState('All')
-  const [isHoveringGrid, setIsHoveringGrid] = useState(false)
 
-  const filtered = portfolioProjects.filter(p =>
-    filter === 'All' ? true : p.tag === filter
+  const filtered = PROJECTS.filter(p =>
+    filter === 'All' ? true : p.tag.includes(filter)
   )
+
+  // The Work page is naturally dark, so we force the global dark class.
+  // This ensures CustomCursor and Navbar invert their colors correctly.
+  useEffect(() => {
+    document.documentElement.classList.add('dark')
+    return () => {
+      document.documentElement.classList.remove('dark')
+    }
+  }, [])
 
   return (
     <main className="min-h-screen bg-[#0a0a0a] text-white flex flex-col">
-      <CustomCursor isVisible={isHoveringGrid} />
-
       <div className="flex-1 px-4 sm:px-8 lg:px-20 pt-12 sm:pt-20 pb-20">
 
         {/* Page heading */}
@@ -112,11 +68,7 @@ export default function WorkPage() {
 
         {/* Project list — matches screenshot layout:
             full-width card, then 2-col pair, repeating */}
-        <div
-          className="w-full cursor-none"
-          onMouseEnter={() => setIsHoveringGrid(true)}
-          onMouseLeave={() => setIsHoveringGrid(false)}
-        >
+        <div className="w-full cursor-none">
           {Array.from({ length: Math.ceil(filtered.length / 3) }).map((_, groupIdx) => {
             const big   = filtered[groupIdx * 3]
             const small1 = filtered[groupIdx * 3 + 1]
@@ -127,7 +79,7 @@ export default function WorkPage() {
 
                 {/* Full-width card */}
                 {big && (
-                  <div className="group w-full">
+                  <Link href={`/work/${big.slug}`} className="group w-full outline-none block" data-cursor="view">
                     <div
                       className="w-full rounded-2xl overflow-hidden mb-3 sm:mb-4 transition-transform duration-500 group-hover:scale-[1.01]"
                       style={{ backgroundColor: big.bg, aspectRatio: '16/9' }}
@@ -140,7 +92,7 @@ export default function WorkPage() {
                     <p className="font-sans text-white/40 text-sm sm:text-base mt-1 leading-snug">
                       {big.desc}
                     </p>
-                  </div>
+                  </Link>
                 )}
 
                 {/* Two-col small cards */}
@@ -148,7 +100,7 @@ export default function WorkPage() {
                   <div className="grid grid-cols-2 gap-3 sm:gap-6">
                     {[small1, small2].map((p, i) =>
                       p ? (
-                        <div key={p.id} className="group">
+                        <Link href={`/work/${p.slug}`} key={p.id} className="group outline-none block" data-cursor="view">
                           <div
                             className="w-full rounded-xl sm:rounded-2xl overflow-hidden mb-2 sm:mb-3 transition-transform duration-500 group-hover:scale-[1.01]"
                             style={{ backgroundColor: p.bg, aspectRatio: '4/3' }}
@@ -161,7 +113,7 @@ export default function WorkPage() {
                           <p className="font-sans text-white/40 text-xs sm:text-sm mt-0.5 leading-snug">
                             {p.desc}
                           </p>
-                        </div>
+                        </Link>
                       ) : (
                         <div key={i} />
                       )

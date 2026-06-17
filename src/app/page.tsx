@@ -12,6 +12,7 @@ export const metadata: Metadata = {
   },
 }
 import ProjectsSection from '@/components/ProjectsSection'
+import WhatWeDoSection from '@/components/WhatWeDoSection'
 import ThirdSection from '@/components/ThirdSection'
 import FourthSection from '@/components/FourthSection'
 import Footer from '@/components/Footer'
@@ -21,6 +22,7 @@ export default function Home() {
     <>
       <main className="flex-1">
         <HeroSection />
+        <WhatWeDoSection />
         <ProjectsSection />
         <ThirdSection />
         <FourthSection />
