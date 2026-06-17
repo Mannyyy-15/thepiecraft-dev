@@ -1,7 +1,6 @@
 'use client'
 
-import { useEffect, useRef, useState } from 'react'
-import CustomCursor from './CustomCursor'
+import { useEffect, useRef } from 'react'
 import { useReducedMotion } from 'framer-motion'
 
 const projects = [
@@ -19,9 +18,7 @@ interface ProjectsSectionProps {
 export default function ProjectsSection({ disableThemeToggle = false }: ProjectsSectionProps = {}) {
   const sectionRef = useRef<HTMLElement>(null)
   const trackRef = useRef<HTMLDivElement>(null)
-  
-  const [isHoveringCard, setIsHoveringCard] = useState(false)
-  
+
   // Track scroll position for infinite carousel
   const xPos = useRef(0)
   const speed = useRef(1) // Base speed
@@ -93,12 +90,10 @@ export default function ProjectsSection({ disableThemeToggle = false }: Projects
 
   const handleMouseEnter = () => {
     targetSpeed.current = 0.15 // Slow down immensely
-    setIsHoveringCard(true)
   }
 
   const handleMouseLeave = () => {
     targetSpeed.current = 1 // Resume normal speed
-    setIsHoveringCard(false)
   }
 
   // Duplicate for infinite effect
@@ -109,8 +104,6 @@ export default function ProjectsSection({ disableThemeToggle = false }: Projects
       ref={sectionRef}
       className="py-32 overflow-hidden bg-background relative transition-colors duration-700 ease-out"
     >
-      <CustomCursor isVisible={isHoveringCard} />
-      
       <div className="px-5 sm:px-8 lg:px-20 mb-12 sm:mb-20">
         <h2 
           ref={headingRef}
@@ -125,6 +118,7 @@ export default function ProjectsSection({ disableThemeToggle = false }: Projects
         className="w-full relative pb-12 cursor-none overflow-hidden"
         onMouseEnter={handleMouseEnter}
         onMouseLeave={handleMouseLeave}
+        data-cursor="view"
       >
         <div 
           className="group relative flex w-max gap-8 px-8"
