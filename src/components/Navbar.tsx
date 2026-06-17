@@ -87,11 +87,11 @@ export default function Navbar() {
       >
         <Link href="/" className="flex items-center">
           <Image
-            src="/brand-logo.png"
+            src="/brand-logo-cropped.png"
             alt="ThePieCraft"
-            width={40}
-            height={40}
-            className="h-9 w-auto object-contain"
+            width={160}
+            height={50}
+            className="h-10 w-auto object-contain brightness-0"
             priority
           />
         </Link>

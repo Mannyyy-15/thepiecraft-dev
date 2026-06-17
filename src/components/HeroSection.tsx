@@ -118,7 +118,7 @@ export default function HeroSection() {
       style={{ minHeight: '100dvh' }}
     >
       {/* Title */}
-      <div className="z-10 flex flex-col items-center text-center pt-[6vh] px-4 sm:px-8 w-full">
+      <div className="z-10 flex flex-col items-center text-center pt-[18vh] px-4 sm:px-8 w-full">
         <motion.h1
           className="font-serif text-4xl sm:text-5xl md:text-7xl lg:text-[100px] leading-[1.05] tracking-tight text-foreground"
           {...motionProps(0)}

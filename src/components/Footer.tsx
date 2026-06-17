@@ -1,6 +1,6 @@
 'use client'
 
-import React from 'react'
+import Image from 'next/image'
 
 const ArrowUpIcon = () => (
   <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -43,12 +43,16 @@ export default function Footer() {
           </div>
         </div>
 
-        {/* Center — monogram */}
-        <div className="flex flex-col items-center justify-center gap-1">
-          <div className="font-serif text-[clamp(80px,9vw,140px)] leading-none tracking-tighter text-brand-blue">
-            TPC
-          </div>
-          <span className="text-brand-blue/50 font-sans text-xs tracking-[0.3em] uppercase">
+        {/* Center — logo */}
+        <div className="flex flex-col items-center justify-center gap-2">
+          <Image
+            src="/brand-logo-cropped.png"
+            alt="ThePieCraft"
+            width={220}
+            height={68}
+            className="w-[220px] h-auto object-contain brightness-0 invert"
+          />
+          <span className="text-white/50 font-sans text-xs tracking-[0.3em] uppercase">
             Web Development
           </span>
         </div>
@@ -86,10 +90,14 @@ export default function Footer() {
       <div className="lg:hidden">
 
         <div className="flex flex-col items-center justify-center pt-16 pb-8 px-5 text-center border-b border-white/10">
-          <div className="font-serif text-[clamp(80px,20vw,160px)] leading-none tracking-tighter text-brand-blue">
-            TPC
-          </div>
-          <span className="text-brand-blue/60 font-sans text-xs tracking-[0.3em] uppercase mt-2">
+          <Image
+            src="/brand-logo-cropped.png"
+            alt="ThePieCraft"
+            width={240}
+            height={74}
+            className="w-[200px] h-auto object-contain brightness-0 invert"
+          />
+          <span className="text-white/60 font-sans text-xs tracking-[0.3em] uppercase mt-2">
             Web Development
           </span>
         </div>
