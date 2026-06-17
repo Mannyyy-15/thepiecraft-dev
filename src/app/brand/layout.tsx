@@ -16,11 +16,11 @@ export const metadata: Metadata = {
     "brand guidelines",
     "brand style guide",
   ],
-  alternates: { canonical: "https://thepiecraft.com/brand" },
+  alternates: { canonical: "https://dev.thepiecraftmarketing.com/brand" },
   openGraph: {
     title: "Brand Identity & Strategy | ThePieCraft",
     description: "We craft strategic brand identities — logo design, visual systems, and brand messaging for ambitious businesses.",
-    url: "https://thepiecraft.com/brand",
+    url: "https://dev.thepiecraftmarketing.com/brand",
   },
 }
 

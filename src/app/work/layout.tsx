@@ -10,11 +10,11 @@ export const metadata: Metadata = {
     "brand design portfolio",
     "agency case studies",
   ],
-  alternates: { canonical: "https://thepiecraft.com/work" },
+  alternates: { canonical: "https://dev.thepiecraftmarketing.com/work" },
   openGraph: {
     title: "Portfolio & Work | ThePieCraft",
     description: "Explore our portfolio of web design, custom software, and branding projects built for ambitious businesses.",
-    url: "https://thepiecraft.com/work",
+    url: "https://dev.thepiecraftmarketing.com/work",
   },
 }
 

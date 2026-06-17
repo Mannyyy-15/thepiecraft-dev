@@ -38,8 +38,8 @@ export default function ContactPage() {
             >
               <div>
                 <p className="font-sans text-[13px] uppercase tracking-widest text-foreground/50 mb-2">Email</p>
-                <a href="mailto:hello@thepiecraft.com" className="font-sans text-xl lg:text-2xl hover:opacity-60 transition-opacity">
-                  hello@thepiecraft.com
+                <a href="mailto:info@thepiecraftmarketing.com" className="font-sans text-xl lg:text-2xl hover:opacity-60 transition-opacity">
+                  info@thepiecraftmarketing.com
                 </a>
               </div>
               

@@ -10,11 +10,11 @@ export const metadata: Metadata = {
     "digital agency",
     "creative agency",
   ],
-  alternates: { canonical: "https://thepiecraft.com/about" },
+  alternates: { canonical: "https://dev.thepiecraftmarketing.com/about" },
   openGraph: {
     title: "About ThePieCraft | Web Design & Development Agency",
     description: "Meet the ThePieCraft team — experienced designers, developers, and strategists building exceptional websites, software, and brand identities.",
-    url: "https://thepiecraft.com/about",
+    url: "https://dev.thepiecraftmarketing.com/about",
   },
 }
 

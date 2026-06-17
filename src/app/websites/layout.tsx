@@ -19,11 +19,11 @@ export const metadata: Metadata = {
     "Framer Motion animations",
     "headless CMS development",
   ],
-  alternates: { canonical: "https://thepiecraft.com/websites" },
+  alternates: { canonical: "https://dev.thepiecraftmarketing.com/websites" },
   openGraph: {
     title: "Web Design & Development | ThePieCraft",
     description: "We design and build high-performance websites with Next.js, React, and Tailwind CSS. Ecommerce, CMS, and SEO-led web design for ambitious brands.",
-    url: "https://thepiecraft.com/websites",
+    url: "https://dev.thepiecraftmarketing.com/websites",
   },
 }
 

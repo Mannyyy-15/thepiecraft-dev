@@ -28,18 +28,18 @@ export default function Footer() {
         {/* Left — email + socials */}
         <div className="flex flex-col gap-5">
           <a
-            href="mailto:hello@thepiecraft.com"
-            className="font-sans text-xl font-medium tracking-tight text-brand-blue hover:opacity-70 transition-opacity flex items-center gap-2"
+            href="mailto:info@thepiecraftmarketing.com"
+            className="font-sans text-xl font-medium tracking-tight text-white hover:opacity-70 transition-opacity flex items-center gap-2"
           >
-            hello@thepiecraft.com
+            info@thepiecraftmarketing.com
             <span className="w-7 h-7 rounded-full border border-white/20 flex items-center justify-center text-white/50">
               <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M7 17L17 7M7 7h10v10"/></svg>
             </span>
           </a>
           <div className="flex items-center gap-6 text-white/50 font-sans text-sm font-medium">
-            <a href="#" className="hover:text-white transition-colors">Instagram</a>
-            <a href="#" className="hover:text-white transition-colors">Dribbble</a>
-            <a href="#" className="hover:text-white transition-colors">LinkedIn</a>
+            <a href="https://instagram.com/thepiecraftmarketing" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">Instagram</a>
+            <a href="https://linkedin.com/in/the-piecraft-marketing" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">LinkedIn</a>
+            <a href="https://youtube.com/@thepiecraftmarketing" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">YouTube</a>
           </div>
         </div>
 
@@ -98,13 +98,13 @@ export default function Footer() {
 
           <div className="flex flex-col items-center sm:items-start gap-5 text-center sm:text-left">
             <p className="font-sans text-[11px] uppercase tracking-widest text-white/40">Get in touch</p>
-            <a href="mailto:hello@thepiecraft.com" className="font-sans text-lg font-medium tracking-tight hover:text-brand-blue transition-colors break-all">
-              hello@thepiecraft.com
+            <a href="mailto:info@thepiecraftmarketing.com" className="font-sans text-lg font-medium tracking-tight hover:text-white/70 transition-colors break-all">
+              info@thepiecraftmarketing.com
             </a>
             <div className="flex items-center gap-5 text-white/50 font-medium text-sm">
-              <a href="#" className="hover:text-white transition-colors">Instagram</a>
-              <a href="#" className="hover:text-white transition-colors">Dribbble</a>
-              <a href="#" className="hover:text-white transition-colors">LinkedIn</a>
+              <a href="https://instagram.com/thepiecraftmarketing" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">Instagram</a>
+              <a href="https://linkedin.com/in/the-piecraft-marketing" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">LinkedIn</a>
+              <a href="https://youtube.com/@thepiecraftmarketing" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">YouTube</a>
             </div>
           </div>
 

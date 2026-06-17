@@ -10,11 +10,11 @@ export const metadata: Metadata = {
     "web design quote",
     "custom software quote",
   ],
-  alternates: { canonical: "https://thepiecraft.com/contact" },
+  alternates: { canonical: "https://dev.thepiecraftmarketing.com/contact" },
   openGraph: {
     title: "Contact ThePieCraft | Start Your Project",
     description: "Get in touch to start your website, software, or branding project. We respond within 24 hours.",
-    url: "https://thepiecraft.com/contact",
+    url: "https://dev.thepiecraftmarketing.com/contact",
   },
 }
 

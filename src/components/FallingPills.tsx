@@ -127,8 +127,8 @@ export default function FallingPills({ pills, className = '' }: Props) {
       World.add(engine.world, mouseConstraint)
 
       // Wake up any body the mouse touches so it can be dragged
-      Events.on(mouseConstraint, 'startdrag', ({ body }: { body: import('matter-js').Body }) => {
-        if (body) Body.setStatic(body, false)
+      Events.on(mouseConstraint, 'startdrag', (e: import('matter-js').IEvent<typeof mouseConstraint> & { body?: import('matter-js').Body }) => {
+        if (e.body) Body.setStatic(e.body, false)
       })
 
       const runner = Runner.create()

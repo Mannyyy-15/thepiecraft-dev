@@ -14,7 +14,7 @@ const playfair = Playfair_Display({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://thepiecraft.com'),
+  metadataBase: new URL('https://dev.thepiecraftmarketing.com'),
   title: {
     default: "ThePieCraft — Web Design & Development Agency",
     template: "%s | ThePieCraft",
@@ -40,7 +40,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: "https://thepiecraft.com",
+    url: "https://dev.thepiecraftmarketing.com",
     title: "ThePieCraft — Web Design & Development Agency",
     description: "ThePieCraft builds high-performance websites, custom software, and brand identities for ambitious businesses. React, Next.js, and Tailwind specialists.",
     siteName: "ThePieCraft",
@@ -95,8 +95,8 @@ export default function RootLayout({
               "@context": "https://schema.org",
               "@type": "ProfessionalService",
               "name": "ThePieCraft",
-              "url": "https://thepiecraft.com",
-              "logo": "https://thepiecraft.com/logo.png",
+              "url": "https://dev.thepiecraftmarketing.com",
+              "logo": "https://dev.thepiecraftmarketing.com/logo.png",
               "description": "ThePieCraft is a full-service web design, development, and branding agency specialising in Next.js, React, custom software, and brand identity design.",
               "email": "hello@thepiecraft.com",
               "areaServed": "Worldwide",

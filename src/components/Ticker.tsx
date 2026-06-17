@@ -1,12 +1,12 @@
 'use client'
 
 const items = [
-  "15 Years! This year we celebrate 7,888,680 minutes in business!",
-  "New software, new website, same boring people.",
-  "New software, new website, new news banner!",
-  "15 Years! This year we celebrate 7,888,680 minutes in business!",
-  "New software, new website, same us.",
-  "We build software that works on the web.",
+  "Custom websites & software built for ambitious brands.",
+  "Now live at dev.thepiecraftmarketing.com",
+  "Web design · Software development · Brand identity.",
+  "8.5x ROAS for elite clients — now bringing that standard to web & software.",
+  "High-performance websites built with Next.js & React.",
+  "Get in touch → info@thepiecraftmarketing.com",
 ]
 
 const separator = <span className="mx-8 lg:mx-16 select-none"></span>

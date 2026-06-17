@@ -2,6 +2,7 @@
 
 import { useState, useRef, useEffect } from 'react'
 import Link from 'next/link'
+import Image from 'next/image'
 import { usePathname } from 'next/navigation'
 import { motion, AnimatePresence } from 'framer-motion'
 import { cn } from '@/lib/utils'
@@ -84,11 +85,15 @@ export default function Navbar() {
         ref={headerRef}
         className="bg-background border-b border-foreground/5 transition-colors duration-700 ease-out flex items-center justify-between px-5 sm:px-8 lg:px-20 py-3 lg:py-5 relative z-50"
       >
-        <Link
-          href="/"
-          className="font-sans text-[18px] sm:text-[22px] font-medium tracking-tight text-foreground transition-colors duration-700 ease-out"
-        >
-          ThePieCraft
+        <Link href="/" className="flex items-center">
+          <Image
+            src="/logo.png"
+            alt="ThePieCraft"
+            width={40}
+            height={40}
+            className="h-9 w-auto object-contain"
+            priority
+          />
         </Link>
 
         {/* Desktop Nav */}

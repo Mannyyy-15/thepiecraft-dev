@@ -16,11 +16,11 @@ export const metadata: Metadata = {
     "full stack development agency",
     "scalable software architecture",
   ],
-  alternates: { canonical: "https://thepiecraft.com/software" },
+  alternates: { canonical: "https://dev.thepiecraftmarketing.com/software" },
   openGraph: {
     title: "Custom Software Development | ThePieCraft",
     description: "We build custom SaaS platforms, CRMs, APIs, and web applications. React, Next.js, Node.js, and PostgreSQL specialists.",
-    url: "https://thepiecraft.com/software",
+    url: "https://dev.thepiecraftmarketing.com/software",
   },
 }
 
