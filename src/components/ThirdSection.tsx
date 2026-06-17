@@ -1,9 +1,8 @@
 'use client'
 
-import React from 'react'
 
 const Badge = () => (
-  <div className="relative w-40 h-40 flex items-center justify-center">
+  <div className="relative w-28 h-28 sm:w-36 sm:h-36 lg:w-40 lg:h-40 flex items-center justify-center">
     {/* SVG for circular text and background */}
     <svg viewBox="0 0 100 100" className="absolute inset-0 w-full h-full animate-[spin_12s_linear_infinite]">
       <defs>
@@ -17,7 +16,7 @@ const Badge = () => (
       </text>
     </svg>
     {/* The stationary '15' in the middle */}
-    <span className="relative z-10 text-[56px] font-medium text-black leading-none mt-2" style={{ fontFamily: 'var(--font-sans)' }}>
+    <span className="relative z-10 text-[40px] sm:text-[48px] lg:text-[56px] font-medium text-black leading-none mt-2" style={{ fontFamily: 'var(--font-sans)' }}>
       15
     </span>
   </div>
@@ -26,31 +25,31 @@ const Badge = () => (
 // A purely CSS-based marquee for the logos
 const LogoMarquee = () => {
   const logos = [
-    <span key="1" className="font-serif text-3xl opacity-80">Nebraska</span>,
-    <span key="2" className="font-sans font-medium text-3xl opacity-80">Google</span>,
-    <span key="3" className="font-sans font-bold text-3xl tracking-tighter opacity-80">twitch</span>,
-    <span key="4" className="font-sans font-bold text-3xl flex items-center gap-2 opacity-80">
+    <span key="1" className="font-serif text-xl sm:text-3xl opacity-80">Nebraska</span>,
+    <span key="2" className="font-sans font-medium text-xl sm:text-3xl opacity-80">Google</span>,
+    <span key="3" className="font-sans font-bold text-xl sm:text-3xl tracking-tighter opacity-80">twitch</span>,
+    <span key="4" className="font-sans font-bold text-xl sm:text-3xl flex items-center gap-2 opacity-80">
       <span className="w-6 h-6 rounded-full border-4 border-current grid place-items-center">
         <span className="w-1.5 h-1.5 bg-current rounded-full"></span>
       </span>
       twilio
     </span>,
-    <span key="5" className="font-sans font-black text-4xl tracking-tight opacity-80">hudl</span>,
-    <span key="6" className="font-sans font-black italic text-3xl tracking-widest opacity-80">SIGNAL</span>,
-    <span key="7" className="font-sans font-semibold text-3xl flex items-center gap-2 opacity-80">
+    <span key="5" className="font-sans font-black text-2xl sm:text-4xl tracking-tight opacity-80">hudl</span>,
+    <span key="6" className="font-sans font-black italic text-xl sm:text-3xl tracking-widest opacity-80">SIGNAL</span>,
+    <span key="7" className="font-sans font-semibold text-xl sm:text-3xl flex items-center gap-2 opacity-80">
       <span className="font-black text-4xl">S</span>SauceLabs
     </span>,
   ]
 
   return (
-    <div className="flex w-full overflow-hidden mt-32 py-10 border-t border-white/10 select-none">
-      <div 
-        className="flex w-max items-center gap-24 pr-24"
+    <div className="flex w-full overflow-hidden mt-16 sm:mt-32 py-8 sm:py-10 border-t border-white/10 select-none">
+      <div
+        className="flex w-max items-center gap-10 sm:gap-16 lg:gap-24 pr-10 sm:pr-16 lg:pr-24"
         style={{ animation: 'marquee 30s linear infinite' }}
       >
-        <div className="flex items-center gap-24">{logos}</div>
-        <div className="flex items-center gap-24">{logos}</div>
-        <div className="flex items-center gap-24">{logos}</div>
+        <div className="flex items-center gap-10 sm:gap-16 lg:gap-24">{logos}</div>
+        <div className="flex items-center gap-10 sm:gap-16 lg:gap-24">{logos}</div>
+        <div className="flex items-center gap-10 sm:gap-16 lg:gap-24">{logos}</div>
       </div>
     </div>
   )

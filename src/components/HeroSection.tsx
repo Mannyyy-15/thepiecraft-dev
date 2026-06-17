@@ -4,13 +4,12 @@ import React from 'react'
 import { motion, useReducedMotion } from 'framer-motion'
 import { Globe } from '@/components/ui/globe'
 import { OrbitingCircles } from '@/components/ui/orbiting-circles'
-import { 
-  SiHtml5, SiCss, SiJavascript, SiTypescript, 
+import {
+  SiHtml5, SiCss, SiJavascript,
   SiReact, SiNextdotjs, SiTailwindcss, SiFigma,
   SiVercel, SiGithub, SiFramer, SiNodedotjs,
   SiVuedotjs, SiAngular, SiSvelte, SiPython,
-  SiWebpack, SiPostgresql, SiPrisma, SiDocker,
-  SiStripe, SiMongodb
+  SiPostgresql, SiDocker, SiStripe, SiTypescript
 } from 'react-icons/si'
 
 export default function HeroSection() {
@@ -47,48 +46,50 @@ export default function HeroSection() {
         </motion.p>
       </div>
 
-      {/* Orbiting Circles & Globe Container */}
-      {/* Massive horizon effect anchored near the bottom of the screen */}
-      <div className="absolute bottom-[-800px] lg:bottom-[-900px] left-1/2 flex h-[1800px] w-[1800px] -translate-x-1/2 items-center justify-center z-0 pointer-events-none">
-        
-        {/* Globe (Sized to 900px diameter, sitting just inside the 470px radius inner orbit) */}
-        <div className="absolute inset-0 m-auto flex items-center justify-center size-[700px] sm:size-[800px] md:size-[900px]">
+      {/* Globe + orbiting rings — scaled down on mobile, hidden rings on small screens */}
+      <div className="absolute bottom-[-40vw] sm:bottom-[-500px] lg:bottom-[-900px] left-1/2 flex h-[120vw] w-[120vw] sm:h-[1200px] sm:w-[1200px] lg:h-[1800px] lg:w-[1800px] -translate-x-1/2 items-center justify-center z-0 pointer-events-none">
+
+        {/* Globe */}
+        <div className="absolute inset-0 m-auto flex items-center justify-center size-[80vw] sm:size-[600px] md:size-[900px]">
           <Globe />
         </div>
-        
-        {/* Inner Circle (Fast) — hidden on smallest screens to reduce clutter */}
-        <OrbitingCircles className="size-[50px] border-none bg-transparent" duration={25} delay={0} radius={470}>
-          <div className="bg-background border border-border p-3 rounded-full text-foreground/80 shadow-md flex items-center justify-center"><SiHtml5 size={24} className="text-[#E34F26]" /></div>
-          <div className="bg-background border border-border p-3 rounded-full text-foreground/80 shadow-md flex items-center justify-center"><SiCss size={24} className="text-[#1572B6]" /></div>
-          <div className="bg-background border border-border p-3 rounded-full text-foreground/80 shadow-md flex items-center justify-center"><SiJavascript size={24} className="text-[#F7DF1E]" /></div>
-          <div className="bg-background border border-border p-3 rounded-full text-foreground/80 shadow-md flex items-center justify-center"><SiVuedotjs size={24} className="text-[#4FC08D]" /></div>
-          <div className="bg-background border border-border p-3 rounded-full text-foreground/80 shadow-md flex items-center justify-center"><SiAngular size={24} className="text-[#DD0031]" /></div>
-        </OrbitingCircles>
 
-        {/* Middle Circle (Reverse, Medium speed) */}
-        <OrbitingCircles className="size-[60px] border-none bg-transparent" duration={40} delay={0} radius={620} reverse>
-          <div className="bg-background border border-border p-4 rounded-full text-foreground/80 shadow-md flex items-center justify-center"><SiReact size={28} className="text-[#61DAFB]" /></div>
-          <div className="bg-background border border-border p-4 rounded-full text-foreground/80 shadow-md flex items-center justify-center"><SiNextdotjs size={28} className="text-foreground" /></div>
-          <div className="bg-background border border-border p-4 rounded-full text-foreground/80 shadow-md flex items-center justify-center"><SiTypescript size={28} className="text-[#3178C6]" /></div>
-          <div className="bg-background border border-border p-4 rounded-full text-foreground/80 shadow-md flex items-center justify-center"><SiTailwindcss size={28} className="text-[#06B6D4]" /></div>
-          <div className="bg-background border border-border p-4 rounded-full text-foreground/80 shadow-md flex items-center justify-center"><SiSvelte size={28} className="text-[#FF3E00]" /></div>
-          <div className="bg-background border border-border p-4 rounded-full text-foreground/80 shadow-md flex items-center justify-center"><SiPython size={28} className="text-[#3776AB]" /></div>
-          <div className="bg-background border border-border p-4 rounded-full text-foreground/80 shadow-md flex items-center justify-center"><SiWebpack size={28} className="text-[#8DD6F9]" /></div>
-        </OrbitingCircles>
-        
-        {/* Outer Circle (Slow) */}
-        <OrbitingCircles className="size-[70px] border-none bg-transparent" duration={60} delay={0} radius={780}>
-          <div className="bg-background border border-border p-5 rounded-full text-foreground/80 shadow-md flex items-center justify-center"><SiFigma size={32} className="text-[#F24E1E]" /></div>
-          <div className="bg-background border border-border p-5 rounded-full text-foreground/80 shadow-md flex items-center justify-center"><SiFramer size={32} className="text-foreground" /></div>
-          <div className="bg-background border border-border p-5 rounded-full text-foreground/80 shadow-md flex items-center justify-center"><SiVercel size={32} className="text-foreground" /></div>
-          <div className="bg-background border border-border p-5 rounded-full text-foreground/80 shadow-md flex items-center justify-center"><SiNodedotjs size={32} className="text-[#339933]" /></div>
-          <div className="bg-background border border-border p-5 rounded-full text-foreground/80 shadow-md flex items-center justify-center"><SiGithub size={32} className="text-foreground" /></div>
-          <div className="bg-background border border-border p-5 rounded-full text-foreground/80 shadow-md flex items-center justify-center"><SiPostgresql size={32} className="text-[#4169E1]" /></div>
-          <div className="bg-background border border-border p-5 rounded-full text-foreground/80 shadow-md flex items-center justify-center"><SiPrisma size={32} className="text-foreground" /></div>
-          <div className="bg-background border border-border p-5 rounded-full text-foreground/80 shadow-md flex items-center justify-center"><SiDocker size={32} className="text-[#2496ED]" /></div>
-          <div className="bg-background border border-border p-5 rounded-full text-foreground/80 shadow-md flex items-center justify-center"><SiStripe size={32} className="text-[#008CDD]" /></div>
-          <div className="bg-background border border-border p-5 rounded-full text-foreground/80 shadow-md flex items-center justify-center"><SiMongodb size={32} className="text-[#47A248]" /></div>
-        </OrbitingCircles>
+        {/* Inner ring — hidden on mobile */}
+        <div className="hidden sm:contents">
+          <OrbitingCircles className="size-[40px] sm:size-[50px] border-none bg-transparent" duration={25} delay={0} radius={300} >
+            <div className="bg-background border border-border p-2 sm:p-3 rounded-full shadow-md flex items-center justify-center"><SiHtml5 size={18} className="text-[#E34F26]" /></div>
+            <div className="bg-background border border-border p-2 sm:p-3 rounded-full shadow-md flex items-center justify-center"><SiCss size={18} className="text-[#1572B6]" /></div>
+            <div className="bg-background border border-border p-2 sm:p-3 rounded-full shadow-md flex items-center justify-center"><SiJavascript size={18} className="text-[#F7DF1E]" /></div>
+            <div className="bg-background border border-border p-2 sm:p-3 rounded-full shadow-md flex items-center justify-center"><SiVuedotjs size={18} className="text-[#4FC08D]" /></div>
+            <div className="bg-background border border-border p-2 sm:p-3 rounded-full shadow-md flex items-center justify-center"><SiAngular size={18} className="text-[#DD0031]" /></div>
+          </OrbitingCircles>
+        </div>
+
+        {/* Middle ring — hidden on mobile */}
+        <div className="hidden md:contents">
+          <OrbitingCircles className="size-[50px] md:size-[60px] border-none bg-transparent" duration={40} delay={0} radius={430} reverse>
+            <div className="bg-background border border-border p-3 sm:p-4 rounded-full shadow-md flex items-center justify-center"><SiReact size={22} className="text-[#61DAFB]" /></div>
+            <div className="bg-background border border-border p-3 sm:p-4 rounded-full shadow-md flex items-center justify-center"><SiNextdotjs size={22} className="text-foreground" /></div>
+            <div className="bg-background border border-border p-3 sm:p-4 rounded-full shadow-md flex items-center justify-center"><SiTypescript size={22} className="text-[#3178C6]" /></div>
+            <div className="bg-background border border-border p-3 sm:p-4 rounded-full shadow-md flex items-center justify-center"><SiTailwindcss size={22} className="text-[#06B6D4]" /></div>
+            <div className="bg-background border border-border p-3 sm:p-4 rounded-full shadow-md flex items-center justify-center"><SiSvelte size={22} className="text-[#FF3E00]" /></div>
+            <div className="bg-background border border-border p-3 sm:p-4 rounded-full shadow-md flex items-center justify-center"><SiPython size={22} className="text-[#3776AB]" /></div>
+          </OrbitingCircles>
+        </div>
+
+        {/* Outer ring — lg only */}
+        <div className="hidden lg:contents">
+          <OrbitingCircles className="size-[70px] border-none bg-transparent" duration={60} delay={0} radius={620}>
+            <div className="bg-background border border-border p-5 rounded-full shadow-md flex items-center justify-center"><SiFigma size={28} className="text-[#F24E1E]" /></div>
+            <div className="bg-background border border-border p-5 rounded-full shadow-md flex items-center justify-center"><SiFramer size={28} className="text-foreground" /></div>
+            <div className="bg-background border border-border p-5 rounded-full shadow-md flex items-center justify-center"><SiVercel size={28} className="text-foreground" /></div>
+            <div className="bg-background border border-border p-5 rounded-full shadow-md flex items-center justify-center"><SiNodedotjs size={28} className="text-[#339933]" /></div>
+            <div className="bg-background border border-border p-5 rounded-full shadow-md flex items-center justify-center"><SiGithub size={28} className="text-foreground" /></div>
+            <div className="bg-background border border-border p-5 rounded-full shadow-md flex items-center justify-center"><SiPostgresql size={28} className="text-[#4169E1]" /></div>
+            <div className="bg-background border border-border p-5 rounded-full shadow-md flex items-center justify-center"><SiDocker size={28} className="text-[#2496ED]" /></div>
+            <div className="bg-background border border-border p-5 rounded-full shadow-md flex items-center justify-center"><SiStripe size={28} className="text-[#008CDD]" /></div>
+          </OrbitingCircles>
+        </div>
       </div>
 
       {/* Fade at bottom to seamlessly blend with the next section */}

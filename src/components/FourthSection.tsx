@@ -1,6 +1,5 @@
 'use client'
 
-import React from 'react'
 
 const SoftwareGraphics = () => (
   <div className="absolute inset-0 overflow-hidden pointer-events-none opacity-50 mix-blend-overlay">
@@ -71,37 +70,37 @@ export default function FourthSection() {
   return (
     <section className="bg-background text-foreground pt-10 pb-32 transition-colors duration-700 ease-out">
       <div className="px-8 lg:px-20 mx-auto w-full">
-        <h2 className="font-serif text-4xl lg:text-5xl mb-12">Our Services</h2>
-        
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12">
-          
+        <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl mb-8 sm:mb-12">Our Services</h2>
+
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-12">
+
           {/* Software Card */}
-          <a href="/software" className="group relative w-full aspect-square rounded-3xl overflow-hidden cursor-pointer transition-all duration-700 ease-out hover:shadow-2xl block">
+          <a href="/software" className="group relative w-full h-[70vw] sm:h-[60vw] lg:h-auto lg:aspect-[4/3] xl:aspect-square rounded-2xl sm:rounded-3xl overflow-hidden cursor-pointer transition-all duration-700 ease-out hover:shadow-2xl block">
             {/* Background gradient */}
             <div className="absolute inset-0 bg-gradient-to-br from-[#0a0a0a] via-[#111827] to-[#1e293b] transition-transform duration-1000 ease-out group-hover:scale-110" />
             
             <SoftwareGraphics />
 
             {/* Text Overlay */}
-            <div className="absolute inset-0 flex flex-col items-start justify-end p-10 transition-transform duration-700 group-hover:scale-105">
-              <p className="font-sans text-[13px] uppercase tracking-widest text-white/40 mb-3">CRM · SaaS · Applications</p>
-              <h3 className="font-sans font-medium text-white text-[clamp(48px,8vw,80px)] tracking-tight drop-shadow-lg leading-none">
+            <div className="absolute inset-0 flex flex-col items-start justify-end p-6 sm:p-8 lg:p-10 transition-transform duration-700 group-hover:scale-105">
+              <p className="font-sans text-[11px] sm:text-[13px] uppercase tracking-widest text-white/40 mb-2 sm:mb-3">CRM · SaaS · Applications</p>
+              <h3 className="font-sans font-medium text-white text-[clamp(36px,7vw,80px)] tracking-tight drop-shadow-lg leading-none">
                 Software
               </h3>
             </div>
           </a>
 
           {/* Web Card */}
-          <a href="/websites" className="group relative w-full aspect-square rounded-3xl overflow-hidden cursor-pointer transition-all duration-700 ease-out hover:shadow-2xl block">
+          <a href="/websites" className="group relative w-full h-[70vw] sm:h-[60vw] lg:h-auto lg:aspect-[4/3] xl:aspect-square rounded-2xl sm:rounded-3xl overflow-hidden cursor-pointer transition-all duration-700 ease-out hover:shadow-2xl block">
             {/* Background color */}
             <div className="absolute inset-0 bg-foreground transition-transform duration-1000 ease-out group-hover:scale-110" />
             
             <WebGraphics />
 
             {/* Text Overlay */}
-            <div className="absolute inset-0 flex flex-col items-start justify-end p-10 transition-transform duration-700 group-hover:scale-105">
-              <p className="font-sans text-[13px] uppercase tracking-widest text-brand-blue/50 mb-3">Design · Development · CMS</p>
-              <h3 className="font-sans font-medium text-brand-blue text-[clamp(48px,8vw,80px)] tracking-tight drop-shadow-lg leading-none">
+            <div className="absolute inset-0 flex flex-col items-start justify-end p-6 sm:p-8 lg:p-10 transition-transform duration-700 group-hover:scale-105">
+              <p className="font-sans text-[11px] sm:text-[13px] uppercase tracking-widest text-brand-blue/50 mb-2 sm:mb-3">Design · Development · CMS</p>
+              <h3 className="font-sans font-medium text-brand-blue text-[clamp(36px,7vw,80px)] tracking-tight drop-shadow-lg leading-none">
                 Web
               </h3>
             </div>

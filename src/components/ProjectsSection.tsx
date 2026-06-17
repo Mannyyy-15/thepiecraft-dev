@@ -1,6 +1,6 @@
 'use client'
 
-import React, { useEffect, useRef, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import CustomCursor from './CustomCursor'
 import { useReducedMotion } from 'framer-motion'
 
@@ -111,7 +111,7 @@ export default function ProjectsSection({ disableThemeToggle = false }: Projects
     >
       <CustomCursor isVisible={isHoveringCard} />
       
-      <div className="px-8 lg:px-20 mb-20">
+      <div className="px-5 sm:px-8 lg:px-20 mb-12 sm:mb-20">
         <h2 
           ref={headingRef}
           className="font-serif text-[clamp(40px,5vw,64px)] leading-tight text-black dark:text-teal-100/90 max-w-4xl transition-colors duration-700"
@@ -133,12 +133,12 @@ export default function ProjectsSection({ disableThemeToggle = false }: Projects
           {repeatedProjects.map((p, i) => (
             <div 
               key={`${p.id}-${i}`}
-              className="flex flex-col gap-6 w-[85vw] md:w-[640px] flex-shrink-0 transition-all duration-500 ease-out 
+              className="flex flex-col gap-4 sm:gap-6 w-[80vw] sm:w-[480px] md:w-[580px] lg:w-[640px] flex-shrink-0 transition-all duration-500 ease-out
                          group-hover:opacity-40 group-hover:saturate-50 hover:!opacity-100 hover:!saturate-100"
             >
               {/* Card Graphic */}
               <div 
-                className="w-full h-[60vw] md:h-[415px] rounded-2xl flex items-center justify-center transition-transform duration-500 hover:scale-[1.02]"
+                className="w-full h-[56vw] sm:h-[340px] md:h-[380px] lg:h-[415px] rounded-xl sm:rounded-2xl flex items-center justify-center transition-transform duration-500 hover:scale-[1.02]"
                 style={{ backgroundColor: p.bg }}
               >
                 <span className={`font-serif text-[clamp(28px,3vw,40px)] font-medium ${p.textColor}`}>
