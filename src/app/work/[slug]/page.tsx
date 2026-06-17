@@ -117,17 +117,18 @@ export default function ProjectPage({ params }: { params: Promise<{ slug: string
         {/* 3. Full Bleed Image Placeholder */}
         <section className="w-full px-5 sm:px-8 lg:px-20 py-10">
           <motion.div 
-            initial={{ opacity: 0, scale: 0.98 }}
-            whileInView={{ opacity: 1, scale: 1 }}
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
-            className={`relative w-full aspect-[16/9] lg:aspect-[21/9] rounded-2xl overflow-hidden flex items-center justify-center ${project.mockupBg}`}
+            className={`w-full rounded-2xl overflow-hidden shadow-2xl ${project.mockupBg}`}
           >
             <Image
               src={project.image}
               alt={`${project.name} Screenshot`}
-              fill
-              className="object-cover"
+              width={1920}
+              height={5000}
+              className="w-full h-auto object-top"
               sizes="(max-width: 1024px) 100vw, 80vw"
             />
           </motion.div>
