@@ -1,112 +1,125 @@
 'use client'
 
-
 const SoftwareGraphics = () => (
-  <div className="absolute inset-0 overflow-hidden pointer-events-none opacity-50 mix-blend-overlay">
-    <svg className="absolute inset-0 w-full h-full" viewBox="0 0 1000 800" preserveAspectRatio="xMidYMid slice">
-      {/* Node: CRM */}
-      <circle cx="200" cy="300" r="48" fill="none" stroke="#e6f1f3" strokeWidth="2" opacity="0.8" />
-      <text x="200" y="305" textAnchor="middle" fill="#e6f1f3" fontSize="12" fontFamily="monospace" opacity="0.9">CRM</text>
-
-      {/* Node: SaaS */}
-      <circle cx="500" cy="180" r="48" fill="none" stroke="#e6f1f3" strokeWidth="2" opacity="0.8" />
-      <text x="500" y="185" textAnchor="middle" fill="#e6f1f3" fontSize="12" fontFamily="monospace" opacity="0.9">SaaS</text>
-
-      {/* Node: API */}
-      <circle cx="800" cy="300" r="48" fill="none" stroke="#e6f1f3" strokeWidth="2" opacity="0.8" />
-      <text x="800" y="305" textAnchor="middle" fill="#e6f1f3" fontSize="12" fontFamily="monospace" opacity="0.9">API</text>
-
-      {/* Node: DB */}
-      <circle cx="350" cy="550" r="40" fill="none" stroke="#e6f1f3" strokeWidth="2" opacity="0.6" />
-      <text x="350" y="555" textAnchor="middle" fill="#e6f1f3" fontSize="11" fontFamily="monospace" opacity="0.9">DB</text>
-
-      {/* Node: App */}
-      <circle cx="650" cy="550" r="40" fill="none" stroke="#e6f1f3" strokeWidth="2" opacity="0.6" />
-      <text x="650" y="555" textAnchor="middle" fill="#e6f1f3" fontSize="11" fontFamily="monospace" opacity="0.9">App</text>
-
-      {/* Connection lines */}
-      <line x1="248" y1="300" x2="452" y2="210" stroke="#e6f1f3" strokeWidth="1.5" opacity="0.4" />
-      <line x1="548" y1="210" x2="752" y2="290" stroke="#e6f1f3" strokeWidth="1.5" opacity="0.4" />
-      <line x1="220" y1="345" x2="320" y2="515" stroke="#e6f1f3" strokeWidth="1.5" opacity="0.3" />
-      <line x1="500" y1="228" x2="390" y2="515" stroke="#e6f1f3" strokeWidth="1.5" opacity="0.3" />
-      <line x1="500" y1="228" x2="610" y2="515" stroke="#e6f1f3" strokeWidth="1.5" opacity="0.3" />
-      <line x1="780" y1="345" x2="685" y2="515" stroke="#e6f1f3" strokeWidth="1.5" opacity="0.3" />
-
-      {/* Pulse dots */}
-      <circle cx="350" cy="255" r="5" fill="#e6f1f3" opacity="0.9" />
-      <circle cx="648" cy="255" r="5" fill="#e6f1f3" opacity="0.9" />
+  <div className="absolute inset-0 overflow-hidden pointer-events-none">
+    {/* Gradient background */}
+    <div className="absolute inset-0 bg-gradient-to-br from-[#a8c5a0] via-[#b8d4b0] to-[#c8d878]" />
+    {/* Decorative SVG */}
+    <svg className="absolute inset-0 w-full h-full" viewBox="0 0 400 500" preserveAspectRatio="xMidYMid slice">
+      {/* Large circle */}
+      <circle cx="200" cy="220" r="140" fill="none" stroke="rgba(255,255,255,0.25)" strokeWidth="1.5" />
+      {/* Small circles */}
+      <circle cx="60"  cy="150" r="28"  fill="none" stroke="rgba(255,255,255,0.2)" strokeWidth="1" />
+      <circle cx="320" cy="320" r="22"  fill="none" stroke="rgba(255,255,255,0.2)" strokeWidth="1" />
+      <circle cx="340" cy="110" r="14"  fill="none" stroke="rgba(255,255,255,0.18)" strokeWidth="1" />
+      {/* Rectangles top-right */}
+      <rect x="290" y="30"  width="50" height="50" fill="none" stroke="rgba(255,255,255,0.22)" strokeWidth="1" />
+      <rect x="310" y="50"  width="50" height="50" fill="none" stroke="rgba(255,255,255,0.14)" strokeWidth="1" />
+      {/* Brush / swirl path */}
+      <path
+        d="M 80 380 C 100 300, 160 280, 200 240 C 240 200, 260 160, 240 120 C 220 80, 180 100, 190 140"
+        fill="none"
+        stroke="rgba(255,255,255,0.35)"
+        strokeWidth="18"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        opacity="0.5"
+      />
+      <path
+        d="M 80 380 C 100 300, 160 280, 200 240 C 240 200, 260 160, 240 120 C 220 80, 180 100, 190 140"
+        fill="none"
+        stroke="rgba(255,255,255,0.15)"
+        strokeWidth="6"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
     </svg>
   </div>
 )
 
 const WebGraphics = () => (
   <div className="absolute inset-0 overflow-hidden pointer-events-none">
-    <svg className="absolute inset-0 w-full h-full" viewBox="0 0 1000 800" preserveAspectRatio="xMidYMid slice">
-      {/* Large orbital arc */}
-      <path d="M 150 1000 A 400 400 0 0 1 850 1000" fill="none" stroke="#e6f1f3" strokeWidth="2" opacity="0.3" />
-      
-      {/* Squares along arc */}
-      <rect x="250" y="420" width="16" height="16" fill="#e6f1f3" opacity="0.6"/>
-      <rect x="700" y="250" width="16" height="16" fill="#e6f1f3" opacity="0.6"/>
-      <rect x="800" y="480" width="16" height="16" fill="#e6f1f3" opacity="0.6"/>
-      <rect x="650" y="620" width="16" height="16" fill="#e6f1f3" opacity="0.4"/>
-      <rect x="180" y="720" width="16" height="16" fill="#e6f1f3" opacity="0.4"/>
-
-      {/* Grid lines bottom */}
-      <line x1="300" y1="750" x2="300" y2="1000" stroke="#e6f1f3" strokeWidth="1" opacity="0.2" />
-      <line x1="450" y1="800" x2="450" y2="1000" stroke="#e6f1f3" strokeWidth="1" opacity="0.2" />
-      <line x1="600" y1="750" x2="600" y2="1000" stroke="#e6f1f3" strokeWidth="1" opacity="0.2" />
-      <line x1="750" y1="700" x2="750" y2="1000" stroke="#e6f1f3" strokeWidth="1" opacity="0.2" />
-
-      {/* Bar chart steps */}
-      <rect x="600" y="850" width="150" height="200" fill="#e6f1f3" opacity="0.3" />
-      <rect x="750" y="780" width="150" height="250" fill="#e6f1f3" opacity="0.4" />
-      <rect x="900" y="700" width="150" height="350" fill="#e6f1f3" opacity="0.5" />
+    {/* Dark background */}
+    <div className="absolute inset-0 bg-[#1e2a2a]" />
+    <svg className="absolute inset-0 w-full h-full" viewBox="0 0 400 500" preserveAspectRatio="xMidYMid slice">
+      {/* Large circle outline */}
+      <circle cx="200" cy="220" r="155" fill="none" stroke="rgba(180,220,200,0.2)" strokeWidth="1.5" />
+      {/* Small accent squares — lime/yellow */}
+      <rect x="100" y="120" width="14" height="14" fill="#c8d820" opacity="0.85" />
+      <rect x="290" y="90"  width="14" height="14" fill="#c8d820" opacity="0.85" />
+      <rect x="310" y="250" width="14" height="14" fill="#c8d820" opacity="0.85" />
+      <rect x="80"  cy="280" width="10" height="10" fill="#c8d820" opacity="0.5" />
+      {/* Grid / bar chart at bottom */}
+      <line x1="60"  y1="440" x2="60"  y2="500" stroke="rgba(180,220,200,0.15)" strokeWidth="1" />
+      <line x1="120" y1="440" x2="120" y2="500" stroke="rgba(180,220,200,0.15)" strokeWidth="1" />
+      <line x1="180" y1="440" x2="180" y2="500" stroke="rgba(180,220,200,0.15)" strokeWidth="1" />
+      <line x1="240" y1="440" x2="240" y2="500" stroke="rgba(180,220,200,0.15)" strokeWidth="1" />
+      <line x1="300" y1="440" x2="300" y2="500" stroke="rgba(180,220,200,0.15)" strokeWidth="1" />
+      <line x1="360" y1="440" x2="360" y2="500" stroke="rgba(180,220,200,0.15)" strokeWidth="1" />
+      {/* Rising bars */}
+      <rect x="200" y="390" width="55" height="120" fill="rgba(120,180,160,0.2)" />
+      <rect x="258" y="360" width="55" height="150" fill="rgba(120,180,160,0.28)" />
+      <rect x="316" y="330" width="55" height="180" fill="rgba(120,180,160,0.35)" />
+      {/* Gradient wash at bottom */}
+      <defs>
+        <linearGradient id="webFade" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%" stopColor="#4db890" stopOpacity="0" />
+          <stop offset="100%" stopColor="#4db890" stopOpacity="0.25" />
+        </linearGradient>
+      </defs>
+      <rect x="0" y="350" width="400" height="150" fill="url(#webFade)" />
     </svg>
   </div>
 )
 
 export default function FourthSection() {
   return (
-    <section className="bg-background text-foreground pt-10 pb-32 transition-colors duration-700 ease-out">
-      <div className="px-8 lg:px-20 mx-auto w-full">
-        <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl mb-8 sm:mb-12">Our Services</h2>
+    <section className="bg-background text-foreground transition-colors duration-700 ease-out pt-10 pb-20">
+      <div className="px-5 sm:px-8 lg:px-20 mb-8 sm:mb-12">
+        <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl">Our Services</h2>
+      </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-12">
+      {/* Cards grid */}
+      <div className="px-5 sm:px-8 lg:px-20 grid grid-cols-1 sm:grid-cols-2 gap-5 sm:gap-6 lg:gap-8">
 
-          {/* Software Card */}
-          <a href="/software" className="group relative w-full h-[70vw] sm:h-[60vw] lg:h-auto lg:aspect-[4/3] xl:aspect-square rounded-2xl sm:rounded-3xl overflow-hidden cursor-pointer transition-all duration-700 ease-out hover:shadow-2xl block">
-            {/* Background gradient */}
-            <div className="absolute inset-0 bg-gradient-to-br from-[#0a0a0a] via-[#111827] to-[#1e293b] transition-transform duration-1000 ease-out group-hover:scale-110" />
-            
-            <SoftwareGraphics />
+        {/* Software / Brand card */}
+        <a
+          href="/software"
+          className="group relative w-full rounded-2xl sm:rounded-3xl overflow-hidden cursor-pointer block transition-transform duration-500 hover:scale-[1.02]"
+          style={{ aspectRatio: '4/5' }}
+        >
+          <SoftwareGraphics />
+          {/* Centered title */}
+          <div className="absolute inset-0 flex items-center justify-center">
+            <h3 className="font-serif text-[clamp(48px,10vw,80px)] text-black/80 tracking-tight leading-none">
+              Software
+            </h3>
+          </div>
+          {/* Bottom label */}
+          <div className="absolute bottom-6 left-6">
+            <p className="font-sans text-[11px] uppercase tracking-[0.18em] text-black/40">CRM · SaaS · Apps</p>
+          </div>
+        </a>
 
-            {/* Text Overlay */}
-            <div className="absolute inset-0 flex flex-col items-start justify-end p-6 sm:p-8 lg:p-10 transition-transform duration-700 group-hover:scale-105">
-              <p className="font-sans text-[11px] sm:text-[13px] uppercase tracking-widest text-white/40 mb-2 sm:mb-3">CRM · SaaS · Applications</p>
-              <h3 className="font-sans font-medium text-white text-[clamp(36px,7vw,80px)] tracking-tight drop-shadow-lg leading-none">
-                Software
-              </h3>
-            </div>
-          </a>
+        {/* Web card */}
+        <a
+          href="/websites"
+          className="group relative w-full rounded-2xl sm:rounded-3xl overflow-hidden cursor-pointer block transition-transform duration-500 hover:scale-[1.02]"
+          style={{ aspectRatio: '4/5' }}
+        >
+          <WebGraphics />
+          {/* Centered title */}
+          <div className="absolute inset-0 flex items-center justify-center">
+            <h3 className="font-serif text-[clamp(48px,10vw,80px)] text-white/70 tracking-tight leading-none">
+              Web
+            </h3>
+          </div>
+          {/* Bottom label */}
+          <div className="absolute bottom-6 left-6">
+            <p className="font-sans text-[11px] uppercase tracking-[0.18em] text-white/30">Design · Dev · CMS</p>
+          </div>
+        </a>
 
-          {/* Web Card */}
-          <a href="/websites" className="group relative w-full h-[70vw] sm:h-[60vw] lg:h-auto lg:aspect-[4/3] xl:aspect-square rounded-2xl sm:rounded-3xl overflow-hidden cursor-pointer transition-all duration-700 ease-out hover:shadow-2xl block">
-            {/* Background color */}
-            <div className="absolute inset-0 bg-foreground transition-transform duration-1000 ease-out group-hover:scale-110" />
-            
-            <WebGraphics />
-
-            {/* Text Overlay */}
-            <div className="absolute inset-0 flex flex-col items-start justify-end p-6 sm:p-8 lg:p-10 transition-transform duration-700 group-hover:scale-105">
-              <p className="font-sans text-[11px] sm:text-[13px] uppercase tracking-widest text-brand-blue/50 mb-2 sm:mb-3">Design · Development · CMS</p>
-              <h3 className="font-sans font-medium text-brand-blue text-[clamp(36px,7vw,80px)] tracking-tight drop-shadow-lg leading-none">
-                Web
-              </h3>
-            </div>
-          </a>
-
-        </div>
       </div>
     </section>
   )

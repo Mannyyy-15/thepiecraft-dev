@@ -16,31 +16,45 @@ const playfair = Playfair_Display({
 export const metadata: Metadata = {
   metadataBase: new URL('https://thepiecraft.com'),
   title: {
-    default: "TCP Web Development | High-End Web Solutions",
-    template: "%s | TCP Web Development",
+    default: "ThePieCraft — Web Design & Development Agency",
+    template: "%s | ThePieCraft",
   },
-  description: "We craft high-performance, aesthetically premium websites and software that empower your brand to grow.",
-  keywords: ["Web Development", "Web Design", "Software Development", "React", "Next.js", "Brand Identity"],
+  description: "ThePieCraft is a full-service web design and development agency building high-performance websites, custom software, and brand identities. React, Next.js, and Tailwind specialists.",
+  keywords: [
+    "web design agency",
+    "web development agency",
+    "custom website design",
+    "Next.js development",
+    "React development agency",
+    "custom software development",
+    "SaaS development",
+    "brand identity design",
+    "UI UX design agency",
+    "full stack web development",
+    "Shopify development",
+    "ecommerce web design",
+    "ThePieCraft",
+  ],
   authors: [{ name: "ThePieCraft" }],
   creator: "ThePieCraft",
   openGraph: {
     type: "website",
     locale: "en_US",
     url: "https://thepiecraft.com",
-    title: "TCP Web Development",
-    description: "We craft high-performance, aesthetically premium websites and software that empower your brand to grow.",
-    siteName: "TCP Web Development",
+    title: "ThePieCraft — Web Design & Development Agency",
+    description: "ThePieCraft builds high-performance websites, custom software, and brand identities for ambitious businesses. React, Next.js, and Tailwind specialists.",
+    siteName: "ThePieCraft",
     images: [{
-      url: "/og-image.jpg", // You can place an og-image.jpg in the public folder
+      url: "/og-image.jpg",
       width: 1200,
       height: 630,
-      alt: "TCP Web Development",
+      alt: "ThePieCraft — Web Design & Development Agency",
     }],
   },
   twitter: {
     card: "summary_large_image",
-    title: "TCP Web Development",
-    description: "We craft high-performance, aesthetically premium websites and software that empower your brand to grow.",
+    title: "ThePieCraft — Web Design & Development Agency",
+    description: "ThePieCraft builds high-performance websites, custom software, and brand identities for ambitious businesses.",
     creator: "@thepiecraft",
   },
   robots: {
@@ -74,6 +88,34 @@ export default function RootLayout({
       className={`${geistSans.variable} ${playfair.variable} antialiased`}
     >
       <body className="min-h-[100dvh] flex flex-col">
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "ProfessionalService",
+              "name": "ThePieCraft",
+              "url": "https://thepiecraft.com",
+              "logo": "https://thepiecraft.com/logo.png",
+              "description": "ThePieCraft is a full-service web design, development, and branding agency specialising in Next.js, React, custom software, and brand identity design.",
+              "email": "hello@thepiecraft.com",
+              "areaServed": "Worldwide",
+              "serviceType": [
+                "Web Design",
+                "Web Development",
+                "Custom Software Development",
+                "Brand Identity Design",
+                "UI/UX Design",
+                "Ecommerce Development",
+                "SaaS Development"
+              ],
+              "sameAs": [
+                "https://twitter.com/thepiecraft",
+                "https://instagram.com/thepiecraft"
+              ]
+            })
+          }}
+        />
         <SmoothScroll>
           <header className="sticky top-0 z-50 w-full flex flex-col">
             <Ticker />

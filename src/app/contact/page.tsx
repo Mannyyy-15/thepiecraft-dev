@@ -1,19 +1,12 @@
 'use client'
 
-import React from 'react'
 import { motion } from 'framer-motion'
-import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
-import Ticker from '@/components/Ticker'
+// Navbar + Ticker rendered globally by layout.tsx
 
 export default function ContactPage() {
   return (
     <div className="min-h-screen bg-background text-foreground transition-colors duration-700 ease-out flex flex-col">
-      <header className="sticky top-0 z-50 w-full flex flex-col">
-        <Ticker />
-        <Navbar />
-      </header>
-
       <main className="flex-1 px-8 lg:px-20 pt-20 pb-32">
         <div className="max-w-[1440px] mx-auto grid grid-cols-1 lg:grid-cols-12 gap-16 lg:gap-8">
           
@@ -25,7 +18,7 @@ export default function ContactPage() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, ease: "easeOut" }}
             >
-              Reach out.
+              Start a project.
             </motion.h1>
             
             <motion.p 
@@ -34,7 +27,7 @@ export default function ContactPage() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.1, ease: "easeOut" }}
             >
-              Let's build something exceptional together. Drop us a line and we'll get back to you within 24 hours.
+              Whether you need a custom website, a software platform, or a brand identity — we'd love to hear about your project. We reply within 24 hours.
             </motion.p>
 
             <motion.div 

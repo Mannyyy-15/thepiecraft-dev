@@ -121,8 +121,8 @@ export default function ProjectsSection({ disableThemeToggle = false }: Projects
       </div>
 
       {/* Carousel Wrapper */}
-      <div 
-        className="w-full relative pb-12 cursor-none"
+      <div
+        className="w-full relative pb-12 cursor-none overflow-hidden"
         onMouseEnter={handleMouseEnter}
         onMouseLeave={handleMouseLeave}
       >

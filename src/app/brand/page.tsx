@@ -3,19 +3,13 @@
 import React from 'react'
 import { motion } from 'framer-motion'
 import { MessageCircle, Shapes, Sun, Type, Target, PenTool } from 'lucide-react'
-import Ticker from '@/components/Ticker'
-import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
 import ProjectsSection from '@/components/ProjectsSection'
+// Navbar + Ticker rendered globally by layout.tsx
 
 export default function BrandPage() {
   return (
     <div className="min-h-screen bg-background text-foreground flex flex-col">
-      <header className="sticky top-0 z-50 w-full flex flex-col">
-        <Ticker />
-        <Navbar />
-      </header>
-      
       <main className="min-h-screen bg-background transition-colors duration-700 ease-out flex flex-col">
         
         {/* 1. Hero */}
@@ -66,7 +60,7 @@ export default function BrandPage() {
         <ProjectsSection disableThemeToggle={true} />
 
         {/* 3. Capabilities Grid Redesign */}
-        <section className="relative w-full px-4 lg:px-8 py-32 border-b border-foreground/10 bg-background transition-colors duration-700">
+        <section className="relative w-full px-4 lg:px-8 py-32 border-b border-foreground/10 bg-background transition-colors duration-700 overflow-hidden">
           <h2 className="font-serif text-[clamp(40px,5vw,64px)] mb-16 text-center text-foreground">Capabilities</h2>
           
           {/* Scrollable wrapper for smaller screens */}
