@@ -2,14 +2,9 @@
 
 import { useEffect, useRef } from 'react'
 import { useReducedMotion } from 'framer-motion'
-
-const projects = [
-  { id: 1, name: 'Omaha Performing Arts', tag: 'Web', bg: '#f8fafc', textColor: 'text-slate-800' },
-  { id: 2, name: 'Foster CRM', tag: 'Software · Web', bg: '#0f172a', textColor: 'text-blue-200' },
-  { id: 3, name: 'HudlTV', tag: 'Software', bg: '#000000', textColor: 'text-white' },
-  { id: 4, name: 'Pioneer', tag: 'Web', bg: '#dbeafe', textColor: 'text-blue-900' },
-  { id: 5, name: 'DataSphere', tag: 'Software', bg: '#1e1b4b', textColor: 'text-violet-200' },
-]
+import Image from 'next/image'
+import Link from 'next/link'
+import { PROJECTS } from '@/lib/projects'
 
 interface ProjectsSectionProps {
   disableThemeToggle?: boolean
@@ -75,7 +70,7 @@ export default function ProjectsSection({ disableThemeToggle = false }: Projects
         if (firstChild) {
           const gap = 32
           const cardWidth = firstChild.offsetWidth + gap
-          const totalWidth = cardWidth * projects.length
+          const totalWidth = cardWidth * PROJECTS.length
           if (xPos.current <= -totalWidth) xPos.current += totalWidth
         }
         trackRef.current.style.transform = `translateX(${xPos.current}px)`
@@ -97,7 +92,7 @@ export default function ProjectsSection({ disableThemeToggle = false }: Projects
   }
 
   // Duplicate for infinite effect
-  const repeatedProjects = [...projects, ...projects, ...projects]
+  const repeatedProjects = [...PROJECTS, ...PROJECTS, ...PROJECTS]
 
   return (
     <section 
@@ -131,14 +126,20 @@ export default function ProjectsSection({ disableThemeToggle = false }: Projects
                          group-hover:opacity-40 group-hover:saturate-50 hover:!opacity-100 hover:!saturate-100"
             >
               {/* Card Graphic */}
-              <div 
-                className="w-full h-[56vw] sm:h-[340px] md:h-[380px] lg:h-[415px] rounded-xl sm:rounded-2xl flex items-center justify-center transition-transform duration-500 hover:scale-[1.02]"
-                style={{ backgroundColor: p.bg }}
-              >
-                <span className={`font-serif text-[clamp(28px,3vw,40px)] font-medium ${p.textColor}`}>
-                  {p.name}
-                </span>
-              </div>
+              <Link href={`/work/${p.slug}`} className="block">
+                <div 
+                  className="w-full h-[56vw] sm:h-[340px] md:h-[380px] lg:h-[415px] rounded-xl sm:rounded-2xl flex items-center justify-center transition-transform duration-500 hover:scale-[1.02] relative overflow-hidden"
+                  style={{ backgroundColor: p.bg }}
+                >
+                  <Image
+                    src={p.image}
+                    alt={p.name}
+                    fill
+                    className="object-cover"
+                    sizes="(max-width: 1024px) 100vw, 50vw"
+                  />
+                </div>
+              </Link>
               
               {/* Card Metadata */}
               <div className="flex items-center gap-3 text-foreground transition-colors duration-700">

@@ -3,6 +3,7 @@
 import { use, useEffect } from 'react';
 import { notFound } from 'next/navigation';
 import { motion } from 'framer-motion';
+import Image from 'next/image';
 import { PROJECTS } from '@/lib/projects';
 import Footer from '@/components/Footer';
 
@@ -120,9 +121,15 @@ export default function ProjectPage({ params }: { params: Promise<{ slug: string
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
-            className={`w-full aspect-[16/9] lg:aspect-[21/9] rounded-2xl overflow-hidden flex items-center justify-center ${project.mockupBg}`}
+            className={`relative w-full aspect-[16/9] lg:aspect-[21/9] rounded-2xl overflow-hidden flex items-center justify-center ${project.mockupBg}`}
           >
-             <span className={`font-sans text-sm tracking-widest uppercase ${mutedTextClass}`}>Full Bleed Media Placeholder</span>
+            <Image
+              src={project.image}
+              alt={`${project.name} Screenshot`}
+              fill
+              className="object-cover"
+              sizes="(max-width: 1024px) 100vw, 80vw"
+            />
           </motion.div>
         </section>
 

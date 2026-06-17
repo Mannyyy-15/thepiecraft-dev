@@ -16,6 +16,7 @@ export interface Project {
   results: { label: string; value: string }[];
   mockupBg: string;
   url?: string;
+  image: string;
 }
 
 export const PROJECTS: Project[] = [
@@ -41,6 +42,7 @@ export const PROJECTS: Project[] = [
     ],
     mockupBg: 'bg-stone-200',
     url: 'http://thepiecraftmarketing.com/',
+    image: '/projects/thepiecraft-marketing.jpg',
   },
   {
     id: 2,
@@ -64,6 +66,7 @@ export const PROJECTS: Project[] = [
     ],
     mockupBg: 'bg-neutral-900',
     url: 'https://thepiecraft-crm.vercel.app/',
+    image: '/projects/thepiecraft-crm.jpg',
   },
   {
     id: 3,
@@ -87,6 +90,7 @@ export const PROJECTS: Project[] = [
     ],
     mockupBg: 'bg-zinc-900',
     url: 'https://apex-watch.vercel.app/',
+    image: '/projects/apex-watch.jpg',
   },
   {
     id: 4,
@@ -110,6 +114,7 @@ export const PROJECTS: Project[] = [
     ],
     mockupBg: 'bg-blue-50',
     url: 'http://yatrisync-web.vercel.app/',
+    image: '/projects/yatrisync-web.jpg',
   },
   {
     id: 5,
@@ -133,5 +138,6 @@ export const PROJECTS: Project[] = [
     ],
     mockupBg: 'bg-orange-50',
     url: 'http://thepiecraft.in/',
+    image: '/projects/thepiecraft-in.jpg',
   },
 ];
