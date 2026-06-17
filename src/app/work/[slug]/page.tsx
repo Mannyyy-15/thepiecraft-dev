@@ -63,9 +63,23 @@ export default function ProjectPage({ params }: { params: Promise<{ slug: string
             <h1 className="font-serif text-[clamp(50px,12vw,180px)] leading-[0.9] tracking-tight mb-8">
               {project.name}
             </h1>
-            <p className="font-sans text-[clamp(20px,3vw,36px)] leading-snug max-w-4xl mx-auto opacity-80">
+            <p className="font-sans text-[clamp(20px,3vw,36px)] leading-snug max-w-4xl mx-auto opacity-80 mb-12">
               {project.desc}
             </p>
+            {project.url && (
+              <a 
+                href={project.url} 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className={`inline-block px-8 py-4 rounded-full font-sans font-medium text-sm tracking-wide border transition-all duration-300 hover:scale-105 ${
+                  isDark 
+                    ? 'bg-[#f0ece1] text-[#0a0a0a] border-transparent hover:bg-transparent hover:text-[#f0ece1] hover:border-[#f0ece1]' 
+                    : 'bg-[#0a0a0a] text-[#f0ece1] border-transparent hover:bg-transparent hover:text-[#0a0a0a] hover:border-[#0a0a0a]'
+                }`}
+              >
+                Visit Live Site ↗
+              </a>
+            )}
           </motion.div>
         </section>
 

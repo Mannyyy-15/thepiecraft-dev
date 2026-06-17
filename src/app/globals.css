@@ -20,10 +20,7 @@ body {
 .hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
 
 /* ─── Global Premium Scrollbar ───────────────────────── */
-html {
-  /* Removed scrollbar-color as it forces native Chrome scrollbars (with arrows) */
-  scrollbar-width: thin;
-}
+/* Removed scrollbar-width and scrollbar-color because they force native browser scrollbars */
 
 ::-webkit-scrollbar {
   width: 10px;
@@ -31,17 +28,28 @@ html {
 }
 
 ::-webkit-scrollbar-track {
-  background: var(--background);
+  background: #f0ece1;
 }
 
 ::-webkit-scrollbar-thumb {
-  background-color: var(--foreground);
-  border: 3px solid var(--background);
+  background-color: #0a0a0a;
+  border: 3px solid #f0ece1;
   border-radius: 10px;
 }
 
 ::-webkit-scrollbar-corner {
-  background: var(--background);
+  background: #f0ece1;
+}
+
+/* Dark mode overrides for scrollbar */
+html.dark ::-webkit-scrollbar-track,
+html.dark ::-webkit-scrollbar-corner {
+  background: #0a0a0a;
+}
+
+html.dark ::-webkit-scrollbar-thumb {
+  background-color: #e6f1f3;
+  border-color: #0a0a0a;
 }
 
 ::-webkit-scrollbar-button {

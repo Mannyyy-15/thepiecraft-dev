@@ -15,6 +15,7 @@ import ProjectsSection from '@/components/ProjectsSection'
 import WhatWeDoSection from '@/components/WhatWeDoSection'
 import ThirdSection from '@/components/ThirdSection'
 import FourthSection from '@/components/FourthSection'
+import FounderSection from '@/components/FounderSection'
 import Footer from '@/components/Footer'
 
 export default function Home() {
@@ -26,6 +27,7 @@ export default function Home() {
         <ProjectsSection />
         <ThirdSection />
         <FourthSection />
+        <FounderSection />
       </main>
       <Footer />
     </>

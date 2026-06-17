@@ -71,6 +71,9 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "/",
   },
+  verification: {
+    google: "WQfPFUDUuu_UA_uCYwIGdVgiDrGgHhsYN_HSJq6TsVY",
+  },
 };
 
 import SmoothScroll from "@/components/SmoothScroll";
