@@ -162,7 +162,7 @@ export default function WebsitesPage() {
           <h2 className="font-serif text-[clamp(40px,5vw,64px)] mb-10 sm:mb-16 text-center text-white">Capabilities</h2>
 
           {/* Mobile: stacked cards matching reference screenshot */}
-          <div className="flex flex-col gap-0 lg:hidden border border-foreground/15 rounded-2xl overflow-hidden">
+          <div className="flex flex-col gap-0 lg:hidden border border-white rounded-2xl overflow-hidden">
             {[
               { title: 'Website Design', items: ['UX & information architecture', 'Mobile-first responsive layouts', 'Custom animations & interactions', 'Brand-led visual design', 'Wireframes & prototyping', 'Design systems'], icon: <svg width="70" height="70" viewBox="0 0 200 200" fill="none"><path d="M100 40L140 60L100 80L60 60L100 40Z" fill="#22c55e"/><path d="M140 60V80L100 100V80L140 60Z" fill="#16a34a"/><path d="M60 60V80L100 100V80L60 60Z" fill="#fef08a"/></svg> },
               { title: 'Content Strategy', items: ['Site-mapping & page hierarchy', 'Copy frameworks & tone', 'SEO-led content planning', 'Copywriting & editing', 'Content audits', 'Blog & resource strategy'], icon: <svg width="70" height="70" viewBox="0 0 200 200" fill="none"><rect x="45" y="40" width="110" height="130" rx="16" fill="#e2e8f0" stroke="#94a3b8" strokeWidth="3"/><rect x="45" y="40" width="110" height="28" rx="16" fill="#94a3b8" fillOpacity="0.3"/><line x1="62" y1="88" x2="122" y2="88" stroke="#64748b" strokeWidth="5" strokeLinecap="round"/><line x1="62" y1="106" x2="138" y2="106" stroke="#64748b" strokeWidth="5" strokeLinecap="round"/><line x1="62" y1="124" x2="108" y2="124" stroke="#22c55e" strokeWidth="5" strokeLinecap="round"/></svg> },
@@ -171,7 +171,7 @@ export default function WebsitesPage() {
               { title: 'CMS Integration', items: ['Sanity, Contentful, Payload', 'Custom content schemas', 'Editor-friendly dashboards', 'Media & asset management', 'Scheduled publishing', 'Multi-language support'], icon: <svg width="70" height="70" viewBox="0 0 200 200" fill="none"><rect x="30" y="45" width="140" height="110" rx="16" fill="#e2e8f0" stroke="#94a3b8" strokeWidth="3"/><line x1="30" y1="78" x2="170" y2="78" stroke="#94a3b8" strokeWidth="2" opacity="0.5"/><rect x="46" y="92" width="32" height="32" rx="6" fill="#94a3b8" fillOpacity="0.3" stroke="#64748b" strokeWidth="1.5"/><rect x="88" y="92" width="32" height="32" rx="6" fill="#94a3b8" fillOpacity="0.3" stroke="#64748b" strokeWidth="1.5"/><rect x="130" y="92" width="22" height="32" rx="6" fill="#94a3b8" fillOpacity="0.15" stroke="#64748b" strokeWidth="1.5"/></svg> },
               { title: 'Ongoing Maintenance', items: ['Security patches & updates', 'Performance monitoring', 'Uptime & error alerts', 'Monthly content updates', 'SEO health checks', 'Hosting & backup management'], icon: <svg width="70" height="70" viewBox="0 0 200 200" fill="none"><path d="M100 40L140 60L100 80L60 60L100 40Z" fill="#16a34a"/><path d="M140 60V80L100 100V80L140 60Z" fill="#22c55e"/><path d="M60 60V80L100 100V80L60 60Z" fill="#fef08a"/><path d="M140 90L180 110L140 130L100 110L140 90Z" fill="#16a34a"/><path d="M180 110V130L140 150V130L180 110Z" fill="#22c55e"/><path d="M100 110V130L140 150V130L100 110Z" fill="#fef08a"/></svg> },
             ].map((cap, i, arr) => (
-              <div key={i} className={`bg-background p-5 flex flex-col gap-4 ${i < arr.length - 1 ? 'border-b border-foreground/10' : ''}`}>
+              <div key={i} className={`bg-background p-5 flex flex-col gap-4 ${i < arr.length - 1 ? 'border-b border-white' : ''}`}>
                 <div className="flex items-start justify-between gap-3">
                   <h3 className="font-sans font-bold text-xl text-foreground leading-tight">{cap.title}</h3>
                   <div className="shrink-0 mt-1">{cap.icon}</div>
@@ -188,47 +188,47 @@ export default function WebsitesPage() {
           {/* Desktop: original bento grid — unchanged */}
           <div className="hidden lg:block w-full overflow-x-auto pb-12 hide-scrollbar">
             <div
-              className="relative border border-white/20 rounded-2xl overflow-hidden bg-[#0a0a0a] shrink-0 mx-auto"
+              className="relative border border-white rounded-2xl overflow-hidden bg-[#0a0a0a] shrink-0 mx-auto"
               style={{ width: 1710, height: 1330 }}
             >
-              <div className="absolute inset-0 z-0 pointer-events-none opacity-20" style={{ backgroundImage: `linear-gradient(to right, white 1px, transparent 1px), linear-gradient(to bottom, white 1px, transparent 1px)`, backgroundSize: '95px 95px' }} />
+              <div className="absolute inset-0 z-0 pointer-events-none opacity-100" style={{ backgroundImage: `linear-gradient(to right, white 1px, transparent 1px), linear-gradient(to bottom, white 1px, transparent 1px)`, backgroundSize: '95px 95px' }} />
               <div className="absolute inset-0 grid" style={{ gridTemplateColumns: 'repeat(18, 95px)', gridTemplateRows: 'repeat(14, 95px)' }}>
-                <div className="bg-[#111] border border-white/20 p-8 flex flex-col group overflow-hidden relative shadow-sm" style={{ gridColumn: '1 / span 5', gridRow: '2 / span 6' }}>
+                <div className="bg-[#111] border border-white p-8 flex flex-col group overflow-hidden relative shadow-sm" style={{ gridColumn: '1 / span 5', gridRow: '2 / span 6' }}>
                   <h3 className="font-sans font-medium text-xl absolute top-8 left-8 z-20 text-white">Website design</h3>
                   <div className="absolute inset-0 flex items-center justify-center w-full h-full transition-all duration-500 ease-out group-hover:opacity-0 group-hover:scale-95 group-hover:pointer-events-none">
                     <svg width="140" height="140" viewBox="0 0 200 200" fill="none"><path d="M100 40L140 60L100 80L60 60L100 40Z" fill="#22c55e"/><path d="M140 60V80L100 100V80L140 60Z" fill="#16a34a"/><path d="M60 60V80L100 100V80L60 60Z" fill="#fef08a"/></svg>
                   </div>
                   <div className="absolute inset-8 top-auto flex flex-col justify-end opacity-0 translate-y-8 transition-all duration-500 ease-out group-hover:opacity-100 group-hover:translate-y-0 z-10 pointer-events-none group-hover:pointer-events-auto"><p className="text-white/70 font-sans text-[15px] leading-snug">Your website is where your brand speaks loudest, so we treat design decisions as opportunities for differentiation.</p></div>
                 </div>
-                <div className="bg-[#111] border border-white/20 p-8 flex flex-col group overflow-hidden relative shadow-sm" style={{ gridColumn: '7 / span 6', gridRow: '1 / span 7' }}>
+                <div className="bg-[#111] border border-white p-8 flex flex-col group overflow-hidden relative shadow-sm" style={{ gridColumn: '7 / span 6', gridRow: '1 / span 7' }}>
                   <h3 className="font-sans font-medium text-xl absolute top-8 left-8 z-20 text-white">Content strategy</h3>
                   <div className="absolute inset-0 flex items-center justify-center w-full h-full transition-all duration-500 ease-out group-hover:opacity-0 group-hover:scale-95 group-hover:pointer-events-none">
                     <svg width="140" height="140" viewBox="0 0 200 200" fill="none"><rect x="50" y="50" width="100" height="100" rx="20" className="stroke-white/20" strokeWidth="4"/><rect x="40" y="60" width="100" height="100" rx="20" className="fill-white/10"/><path d="M60 80H120" className="stroke-white/40" strokeWidth="6" strokeLinecap="round"/><path d="M60 100H140" className="stroke-white/40" strokeWidth="6" strokeLinecap="round"/><path d="M60 120H100" className="stroke-[#fef08a]" strokeWidth="6" strokeLinecap="round"/></svg>
                   </div>
                   <div className="absolute inset-8 top-auto flex flex-col justify-end opacity-0 translate-y-8 transition-all duration-500 ease-out group-hover:opacity-100 group-hover:translate-y-0 z-10 pointer-events-none group-hover:pointer-events-auto"><p className="text-white/70 font-sans text-[15px] leading-snug">We'll create a content strategy that works best for your brand and provide a framework for organizing it all.</p></div>
                 </div>
-                <div className="bg-[#111] border border-white/20 p-8 flex flex-col group overflow-hidden relative shadow-sm" style={{ gridColumn: '14 / span 5', gridRow: '2 / span 6' }}>
+                <div className="bg-[#111] border border-white p-8 flex flex-col group overflow-hidden relative shadow-sm" style={{ gridColumn: '14 / span 5', gridRow: '2 / span 6' }}>
                   <h3 className="font-sans font-medium text-xl absolute top-8 left-8 z-20 text-white">Front-end dev</h3>
                   <div className="absolute inset-0 flex items-center justify-center w-full h-full transition-all duration-500 ease-out group-hover:opacity-0 group-hover:scale-95 group-hover:pointer-events-none">
                     <svg width="140" height="140" viewBox="0 0 200 200" fill="none"><circle cx="100" cy="100" r="50" className="stroke-white/20" strokeWidth="4"/><circle cx="100" cy="100" r="30" className="stroke-white/40" strokeWidth="4"/><circle cx="100" cy="100" r="10" className="fill-[#fef08a]"/></svg>
                   </div>
                   <div className="absolute inset-8 top-auto flex flex-col justify-end opacity-0 translate-y-8 transition-all duration-500 ease-out group-hover:opacity-100 group-hover:translate-y-0 z-10 pointer-events-none group-hover:pointer-events-auto"><p className="text-white/70 font-sans text-[15px] leading-snug">Our proficiency allows us to replicate intricate design layouts into a working website that functions as well as it looks.</p></div>
                 </div>
-                <div className="bg-[#111] border border-white/20 p-8 flex flex-col group overflow-hidden relative shadow-sm" style={{ gridColumn: '1 / span 6', gridRow: '9 / span 6' }}>
+                <div className="bg-[#111] border border-white p-8 flex flex-col group overflow-hidden relative shadow-sm" style={{ gridColumn: '1 / span 6', gridRow: '9 / span 6' }}>
                   <h3 className="font-sans font-medium text-xl absolute top-8 left-8 z-20 text-white">Ecommerce</h3>
                   <div className="absolute inset-0 flex items-center justify-center w-full h-full transition-all duration-500 ease-out group-hover:opacity-0 group-hover:scale-95 group-hover:pointer-events-none">
                     <svg width="140" height="140" viewBox="0 0 200 200" fill="none"><rect x="50" y="60" width="80" height="60" rx="16" className="fill-white/10"/><path d="M50 80H130" className="stroke-white/40" strokeWidth="6" strokeLinecap="round"/><circle cx="90" cy="150" r="10" className="fill-[#22c55e]"/><circle cx="120" cy="150" r="10" className="fill-[#fef08a]"/></svg>
                   </div>
                   <div className="absolute inset-8 top-auto flex flex-col justify-end opacity-0 translate-y-8 transition-all duration-500 ease-out group-hover:opacity-100 group-hover:translate-y-0 z-10 pointer-events-none group-hover:pointer-events-auto"><p className="text-white/70 font-sans text-[15px] leading-snug">You don't have to sacrifice beauty for conversions. We build on-brand, robust ecommerce websites.</p></div>
                 </div>
-                <div className="bg-[#111] border border-white/20 p-8 flex flex-col group overflow-hidden relative shadow-sm" style={{ gridColumn: '7 / span 6', gridRow: '8 / span 7' }}>
+                <div className="bg-[#111] border border-white p-8 flex flex-col group overflow-hidden relative shadow-sm" style={{ gridColumn: '7 / span 6', gridRow: '8 / span 7' }}>
                   <h3 className="font-sans font-medium text-xl absolute top-8 left-8 z-20 text-white">Content Management System</h3>
                   <div className="absolute inset-0 flex items-center justify-center w-full h-full transition-all duration-500 ease-out group-hover:opacity-0 group-hover:scale-95 group-hover:pointer-events-none">
                     <svg width="140" height="140" viewBox="0 0 200 200" fill="none"><rect x="40" y="50" width="120" height="100" rx="20" className="fill-[#111]" stroke="currentColor" strokeOpacity="0.2" strokeWidth="4"/><path d="M70 80H130" className="stroke-[#fef08a]" strokeWidth="6" strokeLinecap="round"/><path d="M70 100H150" className="stroke-[#22c55e]" strokeWidth="6" strokeLinecap="round"/></svg>
                   </div>
                   <div className="absolute inset-8 top-auto flex flex-col justify-end opacity-0 translate-y-8 transition-all duration-500 ease-out group-hover:opacity-100 group-hover:translate-y-0 z-10 pointer-events-none group-hover:pointer-events-auto"><p className="text-white/70 font-sans text-[15px] leading-snug w-3/4">A CMS allows you to edit your site without touching code. We'll suggest a CMS that equips your team well.</p></div>
                 </div>
-                <div className="bg-[#111] border border-white/20 p-8 flex flex-col group overflow-hidden relative shadow-sm" style={{ gridColumn: '14 / span 5', gridRow: '9 / span 6' }}>
+                <div className="bg-[#111] border border-white p-8 flex flex-col group overflow-hidden relative shadow-sm" style={{ gridColumn: '14 / span 5', gridRow: '9 / span 6' }}>
                   <h3 className="font-sans font-medium text-xl absolute top-8 left-8 z-20 text-white">Ongoing maintenance</h3>
                   <div className="absolute inset-0 flex items-center justify-center w-full h-full transition-all duration-500 ease-out group-hover:opacity-0 group-hover:scale-95 group-hover:pointer-events-none">
                     <svg width="140" height="140" viewBox="0 0 200 200" fill="none"><path d="M100 40L140 60L100 80L60 60L100 40Z" fill="#16a34a"/><path d="M140 60V80L100 100V80L140 60Z" fill="#22c55e"/><path d="M60 60V80L100 100V80L60 60Z" fill="#fef08a"/><path d="M140 90L180 110L140 130L100 110L140 90Z" fill="#16a34a"/><path d="M180 110V130L140 150V130L180 110Z" fill="#22c55e"/><path d="M100 110V130L140 150V130L100 110Z" fill="#fef08a"/></svg>
@@ -319,7 +319,7 @@ export default function WebsitesPage() {
                   <div key={step.title} className="flex flex-col relative w-[75vw] sm:w-[40vw] lg:w-[26vw] shrink-0">
                     {/* Node dot — always visible */}
                     <motion.div
-                      className="w-4 h-4 sm:w-5 sm:h-5 rounded-full bg-[#bef264] absolute -top-[42px] left-0 z-10"
+                      className="w-4 h-4 sm:w-5 sm:h-5 rounded-full bg-white absolute -top-[42px] left-0 z-10"
                       initial={{ scale: 0, opacity: 0 }}
                       whileInView={{ scale: 1, opacity: 1 }}
                       viewport={{ once: true }}

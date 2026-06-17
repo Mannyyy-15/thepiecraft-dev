@@ -144,7 +144,7 @@ export default function SoftwarePage() {
           <h2 className="font-serif text-[clamp(40px,5vw,64px)] mb-10 sm:mb-16 text-center text-white">Capabilities</h2>
 
           {/* Mobile: stacked bordered cards — light bg matching reference screenshot */}
-          <div className="flex flex-col gap-0 lg:hidden border border-foreground/15 rounded-2xl overflow-hidden">
+          <div className="flex flex-col gap-0 lg:hidden border border-white rounded-2xl overflow-hidden">
             {[
               {
                 title: 'SaaS Development',
@@ -172,7 +172,7 @@ export default function SoftwarePage() {
                 icon: <svg width="70" height="70" viewBox="0 0 200 200" fill="none"><rect x="20" y="80" width="52" height="40" rx="10" stroke="#334155" strokeWidth="2" opacity="0.3"/><rect x="128" y="80" width="52" height="40" rx="10" stroke="#334155" strokeWidth="2" opacity="0.3"/><rect x="74" y="70" width="52" height="60" rx="12" stroke="#334155" strokeWidth="2.5" opacity="0.45"/><line x1="72" y1="95" x2="52" y2="100" stroke="#334155" strokeWidth="2" opacity="0.35"/><line x1="128" y1="100" x2="148" y2="105" stroke="#334155" strokeWidth="2" opacity="0.35"/><text x="100" y="105" textAnchor="middle" fill="#334155" fontSize="14" fontFamily="monospace" opacity="0.5">API</text></svg>,
               },
             ].map((cap, i, arr) => (
-              <div key={i} className={`bg-background p-5 flex flex-col gap-4 ${i < arr.length - 1 ? 'border-b border-foreground/10' : ''}`}>
+              <div key={i} className={`bg-background p-5 flex flex-col gap-4 ${i < arr.length - 1 ? 'border-b border-white' : ''}`}>
                 <div className="flex items-start justify-between gap-3">
                   <h3 className="font-sans font-bold text-xl text-foreground leading-tight">{cap.title}</h3>
                   <div className="shrink-0 opacity-80 mt-1">{cap.icon}</div>
@@ -189,11 +189,11 @@ export default function SoftwarePage() {
           {/* Desktop: original bento grid — unchanged */}
           <div className="hidden lg:block w-full overflow-x-auto pb-12 hide-scrollbar">
             <div
-              className="relative border border-white/20 rounded-2xl overflow-hidden bg-[#0a0a0a] shrink-0 mx-auto"
+              className="relative border border-white rounded-2xl overflow-hidden bg-[#0a0a0a] shrink-0 mx-auto"
               style={{ width: 1710, height: 1330 }}
             >
               <div
-                className="absolute inset-0 z-0 pointer-events-none opacity-10"
+                className="absolute inset-0 z-0 pointer-events-none opacity-100"
                 style={{
                   backgroundImage: `linear-gradient(to right, white 1px, transparent 1px), linear-gradient(to bottom, white 1px, transparent 1px)`,
                   backgroundSize: '95px 95px',
@@ -203,7 +203,7 @@ export default function SoftwarePage() {
                 className="absolute inset-0 grid"
                 style={{ gridTemplateColumns: 'repeat(18, 95px)', gridTemplateRows: 'repeat(14, 95px)' }}
               >
-                <div className="bg-[#111] border border-white/20 p-8 flex flex-col group overflow-hidden relative shadow-sm" style={{ gridColumn: '1 / span 5', gridRow: '2 / span 6' }}>
+                <div className="bg-[#111] border border-white p-8 flex flex-col group overflow-hidden relative shadow-sm" style={{ gridColumn: '1 / span 5', gridRow: '2 / span 6' }}>
                   <h3 className="font-sans font-medium text-xl absolute top-8 left-8 z-20 text-white">SaaS Development</h3>
                   <div className="absolute inset-0 flex items-center justify-center w-full h-full transition-all duration-500 ease-out group-hover:opacity-0 group-hover:scale-95 group-hover:pointer-events-none">
                     <svg width="140" height="140" viewBox="0 0 200 200" fill="none"><rect x="30" y="50" width="140" height="90" rx="16" fill="none" stroke="#e6f1f3" strokeWidth="3" opacity="0.5"/><rect x="30" y="50" width="140" height="28" rx="16" fill="#e6f1f3" opacity="0.15"/><circle cx="52" cy="64" r="6" fill="#e6f1f3" opacity="0.8"/><circle cx="72" cy="64" r="6" fill="#e6f1f3" opacity="0.5"/><circle cx="92" cy="64" r="6" fill="#e6f1f3" opacity="0.3"/><rect x="48" y="95" width="50" height="8" rx="4" fill="#e6f1f3" opacity="0.4"/><rect x="48" y="112" width="80" height="6" rx="3" fill="#e6f1f3" opacity="0.2"/><rect x="48" y="124" width="60" height="6" rx="3" fill="#e6f1f3" opacity="0.2"/></svg>
@@ -212,7 +212,7 @@ export default function SoftwarePage() {
                     <p className="text-white/70 font-sans text-[15px] leading-snug">End-to-end SaaS product development — from multi-tenant architecture to subscription billing and user management.</p>
                   </div>
                 </div>
-                <div className="bg-[#111] border border-white/20 p-8 flex flex-col group overflow-hidden relative shadow-sm" style={{ gridColumn: '7 / span 6', gridRow: '1 / span 7' }}>
+                <div className="bg-[#111] border border-white p-8 flex flex-col group overflow-hidden relative shadow-sm" style={{ gridColumn: '7 / span 6', gridRow: '1 / span 7' }}>
                   <h3 className="font-sans font-medium text-xl absolute top-8 left-8 z-20 text-white">Custom CRM</h3>
                   <div className="absolute inset-0 flex items-center justify-center w-full h-full transition-all duration-500 ease-out group-hover:opacity-0 group-hover:scale-95 group-hover:pointer-events-none">
                     <svg width="140" height="140" viewBox="0 0 200 200" fill="none"><circle cx="100" cy="70" r="30" stroke="#e6f1f3" strokeWidth="3" opacity="0.6"/><circle cx="55" cy="140" r="22" stroke="#e6f1f3" strokeWidth="2" opacity="0.4"/><circle cx="145" cy="140" r="22" stroke="#e6f1f3" strokeWidth="2" opacity="0.4"/><line x1="100" y1="100" x2="65" y2="122" stroke="#e6f1f3" strokeWidth="2" opacity="0.4"/><line x1="100" y1="100" x2="135" y2="122" stroke="#e6f1f3" strokeWidth="2" opacity="0.4"/><circle cx="100" cy="70" r="10" fill="#e6f1f3" opacity="0.3"/></svg>
@@ -221,7 +221,7 @@ export default function SoftwarePage() {
                     <p className="text-white/70 font-sans text-[15px] leading-snug">Bespoke CRM systems built around your exact sales pipeline, customer lifecycle, and team workflows — not a generic template.</p>
                   </div>
                 </div>
-                <div className="bg-[#111] border border-white/20 p-8 flex flex-col group overflow-hidden relative shadow-sm" style={{ gridColumn: '14 / span 5', gridRow: '2 / span 6' }}>
+                <div className="bg-[#111] border border-white p-8 flex flex-col group overflow-hidden relative shadow-sm" style={{ gridColumn: '14 / span 5', gridRow: '2 / span 6' }}>
                   <h3 className="font-sans font-medium text-xl absolute top-8 left-8 z-20 text-white">Web & Mobile Apps</h3>
                   <div className="absolute inset-0 flex items-center justify-center w-full h-full transition-all duration-500 ease-out group-hover:opacity-0 group-hover:scale-95 group-hover:pointer-events-none">
                     <svg width="140" height="140" viewBox="0 0 200 200" fill="none"><rect x="60" y="30" width="80" height="140" rx="16" stroke="#e6f1f3" strokeWidth="3" opacity="0.5"/><line x1="60" y1="55" x2="140" y2="55" stroke="#e6f1f3" strokeWidth="2" opacity="0.3"/><line x1="60" y1="155" x2="140" y2="155" stroke="#e6f1f3" strokeWidth="2" opacity="0.3"/><circle cx="100" cy="170" r="6" fill="#e6f1f3" opacity="0.5"/><rect x="75" y="70" width="50" height="6" rx="3" fill="#e6f1f3" opacity="0.4"/><rect x="75" y="85" width="35" height="6" rx="3" fill="#e6f1f3" opacity="0.25"/><rect x="75" y="105" width="50" height="24" rx="8" fill="#e6f1f3" opacity="0.15"/></svg>
@@ -230,7 +230,7 @@ export default function SoftwarePage() {
                     <p className="text-white/70 font-sans text-[15px] leading-snug">Responsive web apps and cross-platform mobile applications (React Native / Expo) that deliver a premium experience on any device.</p>
                   </div>
                 </div>
-                <div className="bg-[#111] border border-white/20 p-8 flex flex-col group overflow-hidden relative shadow-sm" style={{ gridColumn: '1 / span 6', gridRow: '9 / span 6' }}>
+                <div className="bg-[#111] border border-white p-8 flex flex-col group overflow-hidden relative shadow-sm" style={{ gridColumn: '1 / span 6', gridRow: '9 / span 6' }}>
                   <h3 className="font-sans font-medium text-xl absolute top-8 left-8 z-20 text-white">System Architecture</h3>
                   <div className="absolute inset-0 flex items-center justify-center w-full h-full transition-all duration-500 ease-out group-hover:opacity-0 group-hover:scale-95 group-hover:pointer-events-none">
                     <svg width="140" height="140" viewBox="0 0 200 200" fill="none"><rect x="70" y="30" width="60" height="36" rx="8" stroke="#e6f1f3" strokeWidth="2.5" opacity="0.7"/><rect x="20" y="120" width="56" height="36" rx="8" stroke="#e6f1f3" strokeWidth="2" opacity="0.5"/><rect x="124" y="120" width="56" height="36" rx="8" stroke="#e6f1f3" strokeWidth="2" opacity="0.5"/><line x1="100" y1="66" x2="100" y2="100" stroke="#e6f1f3" strokeWidth="2" opacity="0.4"/><line x1="100" y1="100" x2="48" y2="120" stroke="#e6f1f3" strokeWidth="2" opacity="0.4"/><line x1="100" y1="100" x2="152" y2="120" stroke="#e6f1f3" strokeWidth="2" opacity="0.4"/><circle cx="100" cy="100" r="5" fill="#e6f1f3" opacity="0.8"/></svg>
@@ -239,7 +239,7 @@ export default function SoftwarePage() {
                     <p className="text-white/70 font-sans text-[15px] leading-snug">We design modular, resilient system architectures — choosing the right patterns (microservices, event-driven, serverless) for your scale.</p>
                   </div>
                 </div>
-                <div className="bg-[#111] border border-white/20 p-8 flex flex-col group overflow-hidden relative shadow-sm" style={{ gridColumn: '8 / span 10', gridRow: '8 / span 7' }}>
+                <div className="bg-[#111] border border-white p-8 flex flex-col group overflow-hidden relative shadow-sm" style={{ gridColumn: '8 / span 10', gridRow: '8 / span 7' }}>
                   <h3 className="font-sans font-medium text-xl absolute top-8 left-8 z-20 text-white">API & Integrations</h3>
                   <div className="absolute inset-0 flex items-center justify-center w-full h-full transition-all duration-500 ease-out group-hover:opacity-0 group-hover:scale-95 group-hover:pointer-events-none">
                     <svg width="200" height="140" viewBox="0 0 300 200" fill="none"><rect x="20" y="70" width="72" height="60" rx="12" fill="#e6f1f3" opacity="0.1" stroke="#e6f1f3" strokeWidth="2" strokeOpacity="0.4"/><text x="56" y="104" textAnchor="middle" fill="#e6f1f3" fontSize="10" fontFamily="monospace" opacity="0.7">Stripe</text><rect x="208" y="70" width="72" height="60" rx="12" fill="#e6f1f3" opacity="0.1" stroke="#e6f1f3" strokeWidth="2" strokeOpacity="0.4"/><text x="244" y="104" textAnchor="middle" fill="#e6f1f3" fontSize="10" fontFamily="monospace" opacity="0.7">HubSpot</text><rect x="108" y="60" width="84" height="80" rx="14" fill="#e6f1f3" opacity="0.12" stroke="#e6f1f3" strokeWidth="2.5" strokeOpacity="0.7"/><text x="150" y="104" textAnchor="middle" fill="#e6f1f3" fontSize="11" fontFamily="monospace" opacity="0.9">API</text><path d="M92 95 L108 95" stroke="#e6f1f3" strokeWidth="2" opacity="0.5" markerEnd="url(#arr)"/><path d="M192 105 L208 105" stroke="#e6f1f3" strokeWidth="2" opacity="0.5" markerEnd="url(#arr)"/><defs><marker id="arr" markerWidth="6" markerHeight="6" refX="3" refY="3" orient="auto"><path d="M0 0 L6 3 L0 6 Z" fill="#e6f1f3" opacity="0.5"/></marker></defs></svg>
@@ -332,7 +332,7 @@ export default function SoftwarePage() {
                   <div key={step.title} className="flex flex-col relative w-[75vw] sm:w-[40vw] lg:w-[26vw] shrink-0">
                     {/* Node dot — always visible */}
                     <motion.div
-                      className="w-4 h-4 sm:w-5 sm:h-5 rounded-full bg-[#bef264] absolute -top-[42px] left-0 z-10"
+                      className="w-4 h-4 sm:w-5 sm:h-5 rounded-full bg-white absolute -top-[42px] left-0 z-10"
                       initial={{ scale: 0, opacity: 0 }}
                       whileInView={{ scale: 1, opacity: 1 }}
                       viewport={{ once: true }}

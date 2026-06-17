@@ -114,7 +114,7 @@ export default function ProjectsSection({ disableThemeToggle = false }: Projects
       <div className="px-5 sm:px-8 lg:px-20 mb-12 sm:mb-20">
         <h2 
           ref={headingRef}
-          className="font-serif text-[clamp(40px,5vw,64px)] leading-tight text-black dark:text-teal-100/90 max-w-4xl transition-colors duration-700"
+          className="font-serif text-[clamp(40px,5vw,64px)] leading-tight text-black dark:text-white max-w-4xl transition-colors duration-700"
         >
           Empowering you with smart creative work so you can grow your business.
         </h2>

@@ -282,7 +282,7 @@ export default function BrandPage() {
               <div className="flex flex-col relative">
                 {/* The Dot */}
                 <motion.div 
-                  className="w-5 h-5 rounded-full bg-[#bef264] absolute -top-[45px] left-0 hidden md:block"
+                  className="w-5 h-5 rounded-full bg-foreground absolute -top-[45px] left-0 hidden md:block"
                   initial={{ scale: 0, opacity: 0 }}
                   whileInView={{ scale: 1, opacity: 1 }}
                   viewport={{ once: true }}
@@ -311,7 +311,7 @@ export default function BrandPage() {
               {/* Item 2 */}
               <div className="flex flex-col relative">
                 <motion.div 
-                  className="w-5 h-5 rounded-full bg-[#bef264] absolute -top-[45px] left-0 hidden md:block"
+                  className="w-5 h-5 rounded-full bg-foreground absolute -top-[45px] left-0 hidden md:block"
                   initial={{ scale: 0, opacity: 0 }}
                   whileInView={{ scale: 1, opacity: 1 }}
                   viewport={{ once: true }}
@@ -338,7 +338,7 @@ export default function BrandPage() {
               {/* Item 3 */}
               <div className="flex flex-col relative">
                 <motion.div 
-                  className="w-5 h-5 rounded-full bg-[#bef264] absolute -top-[45px] left-0 hidden md:block"
+                  className="w-5 h-5 rounded-full bg-foreground absolute -top-[45px] left-0 hidden md:block"
                   initial={{ scale: 0, opacity: 0 }}
                   whileInView={{ scale: 1, opacity: 1 }}
                   viewport={{ once: true }}
