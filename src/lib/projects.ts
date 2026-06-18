@@ -17,6 +17,7 @@ export interface Project {
   mockupBg: string;
   url?: string;
   image: string;
+  fullImage?: string;
 }
 
 export const PROJECTS: Project[] = [
@@ -42,7 +43,8 @@ export const PROJECTS: Project[] = [
     ],
     mockupBg: 'bg-zinc-950',
     url: 'https://theunknownband.netlify.app/',
-    image: '/projects/theunknownband.jpg',
+    image: '/projects/theunknownband-main.png',
+    fullImage: '/projects/theunknownband-full.png',
   },
   {
     id: 105,

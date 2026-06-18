@@ -124,7 +124,7 @@ export default function ProjectPage({ params }: { params: Promise<{ slug: string
             className={`w-full rounded-2xl overflow-hidden shadow-2xl ${project.mockupBg}`}
           >
             <Image
-              src={project.image}
+              src={project.fullImage || project.image}
               alt={`${project.name} Screenshot`}
               width={1920}
               height={5000}
