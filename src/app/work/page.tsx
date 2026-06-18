@@ -3,24 +3,20 @@
 import { useState, useEffect } from 'react'
 import Footer from '@/components/Footer'
 import Link from 'next/link'
+import Image from 'next/image'
 import { PROJECTS } from '@/lib/projects'
 // Navbar + Ticker are rendered globally in layout.tsx — do NOT add them here
 
-// Minimal card thumbnail — placeholder art per project
+// Minimal card thumbnail — now using the real project image
 function CardArt({ project }: { project: typeof PROJECTS[0] }) {
   return (
-    <div className="w-full h-full flex items-center justify-center relative overflow-hidden">
-      {/* Subtle background pattern */}
-      <svg className="absolute inset-0 w-full h-full opacity-20" viewBox="0 0 400 300" preserveAspectRatio="xMidYMid slice">
-        <circle cx="200" cy="150" r="100" fill="none" stroke={project.accent} strokeWidth="1" />
-        <circle cx="200" cy="150" r="60"  fill="none" stroke={project.accent} strokeWidth="0.8" />
-        <line x1="0" y1="150" x2="400" y2="150" stroke={project.accent} strokeWidth="0.5" />
-        <line x1="200" y1="0" x2="200" y2="300" stroke={project.accent} strokeWidth="0.5" />
-      </svg>
-      {/* Central dot */}
-      <div
-        className="w-5 h-5 rounded-full z-10"
-        style={{ backgroundColor: project.accent }}
+    <div className="w-full h-full relative overflow-hidden flex items-center justify-center">
+      <Image
+        src={project.image}
+        alt={`${project.name} Thumbnail`}
+        fill
+        className="object-cover transition-transform duration-700 group-hover:scale-105"
+        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
       />
     </div>
   )
