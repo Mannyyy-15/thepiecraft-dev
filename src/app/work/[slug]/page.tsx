@@ -130,6 +130,7 @@ export default function ProjectPage({ params }: { params: Promise<{ slug: string
               height={5000}
               className="w-full h-auto object-top"
               sizes="(max-width: 1024px) 100vw, 80vw"
+              unoptimized
             />
           </motion.div>
         </section>

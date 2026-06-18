@@ -12,6 +12,7 @@ const links = [
   { label: 'Software', href: '/software' },
   { label: 'Web',      href: '/websites' },
   { label: 'About',    href: '/about' },
+  { label: 'Blogs',    href: '/blog' },
   { label: 'Contact',  href: '/contact' },
 ]
 

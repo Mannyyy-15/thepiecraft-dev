@@ -74,13 +74,13 @@ export default function CustomCursor() {
     dotOpacity = 0; // hide dot on hover
   } else if (cursorState === 'text') {
     ringSize = 80; // wide pill
-    ringBg = 'var(--foreground)';
+    ringBg = 'white';
     label = 'Read';
     dotOpacity = 0;
     ringBorderWidth = '0px';
   } else if (cursorState === 'view') {
     ringSize = 80;
-    ringBg = 'var(--foreground)';
+    ringBg = 'white';
     label = 'View';
     dotOpacity = 0;
     ringBorderWidth = '0px';
@@ -94,7 +94,7 @@ export default function CustomCursor() {
     <>
       {/* Small exact dot */}
       <motion.div
-        className="fixed top-0 left-0 pointer-events-none z-[100] w-2 h-2 bg-foreground rounded-full hidden sm:block"
+        className="fixed top-0 left-0 pointer-events-none z-[100] w-2 h-2 bg-white mix-blend-difference rounded-full hidden sm:block"
         style={{
           x: dotX,
           y: dotY,
@@ -105,7 +105,7 @@ export default function CustomCursor() {
 
       {/* Trailing ring / morphing shape */}
       <motion.div
-        className="fixed top-0 left-0 pointer-events-none z-[100] flex items-center justify-center text-background font-medium text-sm border-foreground hidden sm:flex overflow-hidden"
+        className="fixed top-0 left-0 pointer-events-none z-[100] flex items-center justify-center text-black font-medium text-sm border-white mix-blend-difference hidden sm:flex overflow-hidden"
         style={{
           x: ringXSpring,
           y: ringYSpring,
